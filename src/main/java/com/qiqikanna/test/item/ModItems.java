@@ -1,8 +1,12 @@
 package com.qiqikanna.test.item;
 
 import com.qiqikanna.test.TestMod;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -33,9 +37,18 @@ public class ModItems
         return Registry.register(Registries.ITEM, key, item);
     }
 
+    //fabric api 添加物品栏的方法
+    private static void addItemToItemGroup(FabricItemGroupEntries entries)
+    {
+        entries.add(ICE_ETHER);
+        entries.add(DICK);
+        entries.add(SHIT);
+    }
+
+
     //辅助模组进行初始化的函数
     public static void registerItems()
     {
-
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::addItemToItemGroup);
     }
 }

@@ -1,5 +1,6 @@
 {
   "item.test-mod.ice_ether": "Ice Ether",
   "item.test-mod.shit": "Shit",
-  "item.test-mod.dick": "Dick"
+  "item.test-mod.dick": "Dick",
+  "itemGroup.testmod_group": "test mod"
 }
