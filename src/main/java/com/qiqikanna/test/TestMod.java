@@ -1,5 +1,6 @@
 package com.qiqikanna.test;
 
+import com.qiqikanna.test.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -19,6 +20,7 @@ public class TestMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		ModItems.registerItems();
 		LOGGER.info("Hello Fabric world!");
 	}
 }
