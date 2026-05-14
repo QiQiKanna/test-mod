@@ -1,5 +1,6 @@
 package com.qiqikanna.test;
 
+import com.qiqikanna.test.block.ModBlocks;
 import com.qiqikanna.test.item.ModItemGroups;
 import com.qiqikanna.test.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -23,7 +24,7 @@ public class TestMod implements ModInitializer {
 
 		ModItems.registerItems();
 		ModItemGroups.registerGroups();
-
+		ModBlocks.registerModBlocks();
 		LOGGER.info("Hello Fabric world!");
 	}
 }

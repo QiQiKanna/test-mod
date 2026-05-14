@@ -1,5 +1,14 @@
 {
   "item.test-mod.ice_ether": "冰以太",
   "item.test-mod.shit": "谢特",
-  "item.test-mod.dick": "格调"
+  "item.test-mod.dick": "格调",
+  "item.test-mod.sword":"随手画的剑",
+
+  "block.test-mod.basketball_block": "篮球",
+  "block.test-mod.rainbow_block": "彩虹块",
+  "block.test-mod.ice_ether_block": "冰以太块",
+  "block.test-mod.chandelier": "吊灯",
+
+  "itemGroup.test-mod_group": "测试模组",
+  "itemGroup.test-mod_block": "测试模组方块"
 }

@@ -2,5 +2,15 @@
   "item.test-mod.ice_ether": "Ice Ether",
   "item.test-mod.shit": "Shit",
   "item.test-mod.dick": "Dick",
-  "itemGroup.testmod_group": "test mod"
+  "item.test-mod.sword":"The sword",
+
+  "block.test-mod.basketball_block": "Basketball",
+  "block.test-mod.rainbow_block": "Rainbow Block",
+  "block.test-mod.ice_ether_block": "Ice Ether Block",
+  "block.test-mod.test_block": "Test Block",
+  "block.test-mod.chandelier": "Chandelier",
+
+
+  "itemGroup.test-mod_group": "test mod",
+  "itemGroup.test-mod_block": "test mod block"
 }
