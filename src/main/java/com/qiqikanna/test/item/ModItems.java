@@ -1,6 +1,7 @@
 package com.qiqikanna.test.item;
 
 import com.qiqikanna.test.TestMod;
+import com.qiqikanna.test.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
@@ -12,17 +13,23 @@ import net.minecraft.util.Identifier;
 
 public class ModItems
 {
-
     public static final Item ICE_ETHER = register("ice_ether",new Item(new Item.Settings()));
     public static final Item SHIT = register("shit",new Item(new Item.Settings()));
     public static final Item DICK = register("dick",new Item(new Item.Settings()));
     public static final Item SWORD = register("sword",new SwordItem(ToolMaterials.DIAMOND,10,4.0f,new Item.Settings().maxCount(1)));
 
+    public static final Item BASKETBALL_BLOCK = register(ModBlocks.BASKETBALL_BLOCK);
+    public static final Item RAINBOW_BLOCK = register(ModBlocks.RAINBOW_BLOCK);
+    public static final Item ICE_ETHER_BLOCK = register(ModBlocks.ICE_ETHER_BLOCK);
+    public static final Item CHANDELIER = register(ModBlocks.CHANDELIER);
+    public static final Item TEST_BLOCK = register(new TestBlockItem(ModBlocks.TEST_BLOCK,new Item.Settings()));
+
+
 
 
     //原版的方块物品注册方法
     //不用原版的，用北山推荐的方法注册方块的同时注册方块物品，详见ModBlocks类
-    /*
+
     public static Item register(Block block) {
         return register(new BlockItem(block, new Item.Settings()));
     }
@@ -44,7 +51,7 @@ public class ModItems
     public static Item register(Block block, Item item) {
         return register(Registries.BLOCK.getId(block), item);
     }
-    */
+
 
 
     //原版的物品注册方法

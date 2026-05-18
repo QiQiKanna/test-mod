@@ -46,11 +46,11 @@ public class ModItemGroups
                         .displayName(Text.translatable("itemGroup.test-mod_block"))
                         .icon(() -> new ItemStack(ModBlocks.RAINBOW_BLOCK))
                         .entries((displayContext, entries) -> {
-                            entries.add(ModBlocks.BASKETBALL_BLOCK);
-                            entries.add(ModBlocks.ICE_ETHER_BLOCK);
-                            entries.add(ModBlocks.RAINBOW_BLOCK);
-                            entries.add(ModBlocks.TEST_BLOCK);
-                            entries.add(ModBlocks.CHANDELIER);
+                            entries.add(ModItems.BASKETBALL_BLOCK);
+                            entries.add(ModItems.ICE_ETHER_BLOCK);
+                            entries.add(ModItems.RAINBOW_BLOCK);
+                            entries.add(ModItems.TEST_BLOCK);
+                            entries.add(ModItems.CHANDELIER);
 
                         })
                         .build()
