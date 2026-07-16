@@ -31,7 +31,6 @@ public class ModItemGroups
                         .icon(() -> new ItemStack(ModItems.SHIT))
                         .entries((displayContext, entries) -> {
                             entries.add(ModItems.ICE_ETHER);
-                            entries.add(ModItems.DICK);
                             entries.add(ModItems.SHIT);
                             entries.add(ModItems.SWORD);
 

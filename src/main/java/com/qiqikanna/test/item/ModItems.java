@@ -15,7 +15,6 @@ public class ModItems
 {
     public static final Item ICE_ETHER = register("ice_ether",new Item(new Item.Settings()));
     public static final Item SHIT = register("shit",new Item(new Item.Settings()));
-    public static final Item DICK = register("dick",new Item(new Item.Settings()));
     public static final Item SWORD = register("sword",new SwordItem(ToolMaterials.DIAMOND,10,4.0f,new Item.Settings().maxCount(1)));
 
     public static final Item BASKETBALL_BLOCK = register(ModBlocks.BASKETBALL_BLOCK);

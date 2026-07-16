@@ -1,17 +1,11 @@
 package com.qiqikanna.test.block;
 
 import com.qiqikanna.test.TestMod;
-import com.qiqikanna.test.item.TestBlockItem;
 import net.minecraft.block.*;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.EggItem;
-import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
 
 public class ModBlocks
 {
@@ -30,14 +24,13 @@ public class ModBlocks
             new TestBlock(AbstractBlock.Settings.create()
                     .nonOpaque()
                     .luminance(state -> 15)
-                    .solidBlock(Blocks::never)//原来这个才是控制是否传递红石信号的
+                    .solidBlock(Blocks::never)  //原来这个才是控制是否传递红石信号的
             )
     );
     public static final Block CHANDELIER = register("chandelier",
-            new GlassBlock(AbstractBlock.Settings.create()//不知道为啥只有用特殊的子类才能让他透光
+            new GlassBlock(AbstractBlock.Settings.create()  //不知道为啥只有用特殊的子类才能让他透光
                     .nonOpaque()
                     .luminance(state ->15)
-
             )
     );
 
