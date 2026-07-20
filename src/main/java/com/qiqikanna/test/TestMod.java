@@ -25,6 +25,10 @@ public class TestMod implements ModInitializer {
 		ModItems.registerItems();
 		ModItemGroups.registerGroups();
 		ModBlocks.registerModBlocks();
+
+		//fabric api 注册燃料的方法
+		//FuelRegistry.INSTANCE.add(ModItems.URANIUM,32767);
+
 		LOGGER.info("Hello Fabric world!");
 	}
 }

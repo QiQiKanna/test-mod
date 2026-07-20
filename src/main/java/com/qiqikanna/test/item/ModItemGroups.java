@@ -33,7 +33,9 @@ public class ModItemGroups
                             entries.add(ModItems.ICE_ETHER);
                             entries.add(ModItems.SHIT);
                             entries.add(ModItems.SWORD);
-
+                            entries.add(ModItems.CORN);
+                            entries.add(ModItems.BLUEBARRY);
+                            entries.add(ModItems.URANIUM);
                         })
                         .build()
         );

@@ -2,8 +2,6 @@ package com.qiqikanna.test.item;
 
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.block.ModBlocks;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -13,9 +11,14 @@ import net.minecraft.util.Identifier;
 
 public class ModItems
 {
+    //注册完物品别忘了加到itemGroups里
+    //别忘了语言文件，模型文件，用数据生成
     public static final Item ICE_ETHER = register("ice_ether",new Item(new Item.Settings()));
-    public static final Item SHIT = register("shit",new Item(new Item.Settings()));
+    public static final Item SHIT = register("shit",new Item(new Item.Settings().food(ModFoodComponents.SHIT)));
     public static final Item SWORD = register("sword",new SwordItem(ToolMaterials.DIAMOND,10,4.0f,new Item.Settings().maxCount(1)));
+    public static final Item CORN = register("corn",new Item(new Item.Settings().food(ModFoodComponents.CORN)));
+    public static final Item BLUEBARRY = register("bluebarry",new Item(new Item.Settings().food(ModFoodComponents.BLUEBERRY)));
+    public static final Item URANIUM = register("uranium",new Item(new Item.Settings()));
 
     public static final Item BASKETBALL_BLOCK = register(ModBlocks.BASKETBALL_BLOCK);
     public static final Item RAINBOW_BLOCK = register(ModBlocks.RAINBOW_BLOCK);
@@ -27,8 +30,6 @@ public class ModItems
 
 
     //原版的方块物品注册方法
-    //不用原版的，用北山推荐的方法注册方块的同时注册方块物品，详见ModBlocks类
-
     public static Item register(Block block) {
         return register(new BlockItem(block, new Item.Settings()));
     }

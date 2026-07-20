@@ -28,5 +28,8 @@ public class ModModelProvider extends FabricModelProvider
     {
         itemModelGenerator.register(ModItems.ICE_ETHER, Models.GENERATED);
         itemModelGenerator.register(ModItems.SHIT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CORN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLUEBARRY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.URANIUM,Models.GENERATED);
     }
 }

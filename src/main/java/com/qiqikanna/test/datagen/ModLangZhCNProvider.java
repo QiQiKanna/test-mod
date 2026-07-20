@@ -19,6 +19,9 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
         translationBuilder.add(ModItems.ICE_ETHER,"冰以太");
         translationBuilder.add(ModItems.SHIT,"谢特");
         translationBuilder.add(ModItems.SWORD,"随手画的剑");
+        translationBuilder.add(ModItems.CORN,"玉米");
+        translationBuilder.add(ModItems.BLUEBARRY,"蓝莓");
+        translationBuilder.add(ModItems.URANIUM,"铀");
 
         translationBuilder.add(ModBlocks.BASKETBALL_BLOCK,"篮球");
         translationBuilder.add(ModBlocks.RAINBOW_BLOCK,"彩虹块");
