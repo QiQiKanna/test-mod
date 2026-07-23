@@ -28,6 +28,15 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add(ModBlocks.ICE_ETHER_BLOCK,"Ice Ether Block");
         translationBuilder.add(ModBlocks.TEST_BLOCK,"Test Block");
         translationBuilder.add(ModBlocks.CHANDELIER,"Chandelier");
+        translationBuilder.add(ModBlocks.ICE_ETHER_STAIRS,"Ice Ether Stairs");
+        translationBuilder.add(ModBlocks.ICE_ETHER_SLAB,"Ice Ether Slab");
+        translationBuilder.add(ModBlocks.ICE_ETHER_BUTTON,"Ice Ether Button");
+        translationBuilder.add(ModBlocks.ICE_ETHER_PRESSURE_PLATE,"Ice Ether Pressure Plate");
+        translationBuilder.add(ModBlocks.ICE_ETHER_FENCE,"Ice Ether Fence");
+        translationBuilder.add(ModBlocks.ICE_ETHER_FENCE_GATE,"Ice Ether Fence Gate");
+        translationBuilder.add(ModBlocks.ICE_ETHER_WALLL,"Ice Ether Wall");
+        translationBuilder.add(ModBlocks.ICE_ETHER_DOOR,"Ice Ether Door");
+        translationBuilder.add(ModBlocks.ICE_ETHER_TRAPDOOR,"Ice Ether Trapdoor");
 
         translationBuilder.add(ModItemGroups.TESTMOD_GROUP,"test mod");
         translationBuilder.add(ModItemGroups.TESTMOD_BLOCK,"test mod block");

@@ -1,17 +1,13 @@
 package com.qiqikanna.test.entity.projectile.thrown;
 
 import com.qiqikanna.test.item.ModItems;
-import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.explosion.Explosion;
 import net.minecraft.world.explosion.ExplosionBehavior;
 
 public class TestEntity extends ThrownItemEntity
@@ -38,7 +34,7 @@ public class TestEntity extends ThrownItemEntity
     {
         super.onCollision(hitResult);
         World world = this.getWorld();
-
+/*
         ExplosionBehavior explosionBehavior = new ExplosionBehavior() {
             @Override
             public boolean canDestroyBlock(Explosion explosion, BlockView world, BlockPos pos, BlockState state, float power)
@@ -46,7 +42,7 @@ public class TestEntity extends ThrownItemEntity
                 return false;
             }
         };
-
+*/
         if (!world.isClient && !this.isRemoved())
         {
             if (this.getOwner() != null)

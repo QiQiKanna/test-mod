@@ -20,6 +20,9 @@
 		],
 		"fabric-datagen": [
 			"com.qiqikanna.test.TestModDataGenerator"
+		],
+		"client": [
+			"com.qiqikanna.test.TestModClient"
 		]
 	},
 	"mixins": [

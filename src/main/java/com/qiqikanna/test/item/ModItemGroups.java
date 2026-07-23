@@ -53,6 +53,15 @@ public class ModItemGroups
                             entries.add(ModItems.TEST_BLOCK);
                             entries.add(ModItems.CHANDELIER);
 
+                            entries.add(ModItems.ICE_ETHER_STAIRS);
+                            entries.add(ModItems.ICE_ETHER_SLAB);
+                            entries.add(ModItems.ICE_ETHER_BUTTON);
+                            entries.add(ModItems.ICE_ETHER_PRESSURE_PLATE);
+                            entries.add(ModItems.ICE_ETHER_FENCE);
+                            entries.add(ModItems.ICE_ETHER_FENCE_GATE);
+                            entries.add(ModItems.ICE_ETHER_WALLL);
+                            entries.add(ModItems.ICE_ETHER_DOOR);
+                            entries.add(ModItems.ICE_ETHER_TRAPDOOR);
                         })
                         .build()
         );

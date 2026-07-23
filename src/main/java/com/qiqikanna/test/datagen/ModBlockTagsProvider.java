@@ -1,6 +1,7 @@
 package com.qiqikanna.test.datagen;
 
 import com.qiqikanna.test.block.ModBlocks;
+import com.qiqikanna.test.tag.ModBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -27,5 +28,11 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.RAINBOW_BLOCK);
+
+        getOrCreateTagBuilder(ModBlockTags.ICE_ETHERS).add(ModBlocks.ICE_ETHER_BLOCK);
+
+        getOrCreateTagBuilder(BlockTags.FENCES).add(ModBlocks.ICE_ETHER_FENCE);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(ModBlocks.ICE_ETHER_WALLL);
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES).add(ModBlocks.ICE_ETHER_FENCE_GATE);
     }
 }

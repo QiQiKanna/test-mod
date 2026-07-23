@@ -26,6 +26,15 @@ public class ModItems
     public static final Item CHANDELIER = register(ModBlocks.CHANDELIER);
     public static final Item TEST_BLOCK = register(new TestBlockItem(ModBlocks.TEST_BLOCK,new Item.Settings()));
 
+    public static final Item ICE_ETHER_STAIRS = register(ModBlocks.ICE_ETHER_STAIRS);
+    public static final Item ICE_ETHER_SLAB = register(ModBlocks.ICE_ETHER_SLAB);
+    public static final Item ICE_ETHER_BUTTON = register(ModBlocks.ICE_ETHER_BUTTON);
+    public static final Item ICE_ETHER_PRESSURE_PLATE = register(ModBlocks.ICE_ETHER_PRESSURE_PLATE);
+    public static final Item ICE_ETHER_FENCE = register(ModBlocks.ICE_ETHER_FENCE);
+    public static final Item ICE_ETHER_FENCE_GATE = register(ModBlocks.ICE_ETHER_FENCE_GATE);
+    public static final Item ICE_ETHER_WALLL = register(ModBlocks.ICE_ETHER_WALLL);
+    public static final Item ICE_ETHER_DOOR = register(ModBlocks.ICE_ETHER_DOOR);
+    public static final Item ICE_ETHER_TRAPDOOR = register(ModBlocks.ICE_ETHER_TRAPDOOR);
 
 
 

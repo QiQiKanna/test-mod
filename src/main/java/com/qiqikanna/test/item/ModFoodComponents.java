@@ -9,7 +9,7 @@ public class ModFoodComponents
     public static final FoodComponent CORN = new FoodComponent.Builder().hunger(3).saturationModifier(0.8f).build();
     public static final FoodComponent BLUEBERRY = new FoodComponent.Builder()
             .hunger(1).saturationModifier(0.2f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION,60*20),0.5f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION,30*20),0.5f)
             .alwaysEdible()
             .build();
     public static final FoodComponent SHIT = new FoodComponent.Builder()

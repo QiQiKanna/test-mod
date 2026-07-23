@@ -29,6 +29,15 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
         addDrop(ModBlocks.BASKETBALL_BLOCK);
         addDrop(ModBlocks.RAINBOW_BLOCK,oreBlockDrops(ModBlocks.RAINBOW_BLOCK, ModItems.SHIT,1.0f,5.0f));
         addDrop(ModBlocks.CHANDELIER);
+        addDrop(ModBlocks.ICE_ETHER_STAIRS);
+        addDrop(ModBlocks.ICE_ETHER_SLAB,slabDrops(ModBlocks.ICE_ETHER_SLAB));
+        addDrop(ModBlocks.ICE_ETHER_BUTTON);
+        addDrop(ModBlocks.ICE_ETHER_PRESSURE_PLATE);
+        addDrop(ModBlocks.ICE_ETHER_FENCE);
+        addDrop(ModBlocks.ICE_ETHER_FENCE_GATE);
+        addDrop(ModBlocks.ICE_ETHER_WALLL);
+        addDrop(ModBlocks.ICE_ETHER_DOOR,doorDrops(ModBlocks.ICE_ETHER_DOOR));
+        addDrop(ModBlocks.ICE_ETHER_TRAPDOOR);
     }
 
     public LootTable.Builder oreBlockDrops(Block drop, Item item, float min, float max) {

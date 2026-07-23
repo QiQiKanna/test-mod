@@ -3,6 +3,7 @@ package com.qiqikanna.test.datagen;
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.block.ModBlocks;
 import com.qiqikanna.test.item.ModItems;
+import com.qiqikanna.test.tag.ModItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
@@ -42,8 +43,8 @@ public class ModRecipesProvider extends FabricRecipeProvider
                 .pattern("###")
                 .pattern("# #")
                 .pattern("###")
-                .input('#',ModItems.SHIT)
-                .criterion(hasItem(ModItems.SHIT),conditionsFromItem(ModItems.SHIT))
+                .input('#', ModItemTags.SHITS)//配方可以接受tag，也可以接受item
+                .criterion(hasItem(ModItems.SHIT),conditionsFromTag(ModItemTags.SHITS))//用item就是conditionsFromItem
                 .offerTo(exporter,new Identifier(TestMod.MOD_ID,"basketball"));
     }
 }
