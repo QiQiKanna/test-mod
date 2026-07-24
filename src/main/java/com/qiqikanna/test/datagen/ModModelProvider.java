@@ -34,8 +34,15 @@ public class ModModelProvider extends FabricModelProvider
     {
         itemModelGenerator.register(ModItems.ICE_ETHER, Models.GENERATED);
         itemModelGenerator.register(ModItems.SHIT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MY_SWORD,Models.HANDHELD);
         itemModelGenerator.register(ModItems.CORN, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLUEBARRY, Models.GENERATED);
         itemModelGenerator.register(ModItems.URANIUM,Models.GENERATED);
+        itemModelGenerator.register(ModItems.FIRE_ETHER,Models.GENERATED);
+        itemModelGenerator.register(ModItems.FIRE_ETHER_SWORD,Models.HANDHELD);
+        itemModelGenerator.register(ModItems.FIRE_ETHER_PICKAXE,Models.HANDHELD);
+        itemModelGenerator.register(ModItems.FIRE_ETHER_AXE,Models.HANDHELD);
+        itemModelGenerator.register(ModItems.FIRE_ETHER_SHOVEL,Models.HANDHELD);
+        itemModelGenerator.register(ModItems.FIRE_ETHER_HOE,Models.HANDHELD);
     }
 }

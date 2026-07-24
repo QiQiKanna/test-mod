@@ -18,10 +18,16 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
     {
         translationBuilder.add(ModItems.ICE_ETHER,"冰以太");
         translationBuilder.add(ModItems.SHIT,"谢特");
-        translationBuilder.add(ModItems.SWORD,"随手画的剑");
+        translationBuilder.add(ModItems.MY_SWORD,"随手画的剑");
         translationBuilder.add(ModItems.CORN,"玉米");
         translationBuilder.add(ModItems.BLUEBARRY,"蓝莓");
         translationBuilder.add(ModItems.URANIUM,"铀");
+        translationBuilder.add(ModItems.FIRE_ETHER,"火以太");
+        translationBuilder.add(ModItems.FIRE_ETHER_SWORD,"火以太剑");
+        translationBuilder.add(ModItems.FIRE_ETHER_SHOVEL,"火以太锹");
+        translationBuilder.add(ModItems.FIRE_ETHER_PICKAXE,"火以太镐");
+        translationBuilder.add(ModItems.FIRE_ETHER_AXE,"火以太斧");
+        translationBuilder.add(ModItems.FIRE_ETHER_HOE,"火以太锄");
 
         translationBuilder.add(ModBlocks.BASKETBALL_BLOCK,"篮球");
         translationBuilder.add(ModBlocks.RAINBOW_BLOCK,"彩虹块");

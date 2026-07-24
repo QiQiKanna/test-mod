@@ -18,10 +18,16 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
     {
         translationBuilder.add(ModItems.ICE_ETHER,"Ice Ether");
         translationBuilder.add(ModItems.SHIT,"Shit");
-        translationBuilder.add(ModItems.SWORD,"The Sword");
+        translationBuilder.add(ModItems.MY_SWORD,"My Sword");
         translationBuilder.add(ModItems.CORN,"Corn");
         translationBuilder.add(ModItems.BLUEBARRY,"Bluebarry");
         translationBuilder.add(ModItems.URANIUM,"Uranium");
+        translationBuilder.add(ModItems.FIRE_ETHER,"Fire Ether");
+        translationBuilder.add(ModItems.FIRE_ETHER_SWORD,"Fire Ether Sword");
+        translationBuilder.add(ModItems.FIRE_ETHER_SHOVEL,"Fire Ether Shovel");
+        translationBuilder.add(ModItems.FIRE_ETHER_PICKAXE,"Fire Ether Pickaxe");
+        translationBuilder.add(ModItems.FIRE_ETHER_AXE,"Fire Ether Axe");
+        translationBuilder.add(ModItems.FIRE_ETHER_HOE,"Fire Ether Hoe");
 
         translationBuilder.add(ModBlocks.BASKETBALL_BLOCK,"Basketball");
         translationBuilder.add(ModBlocks.RAINBOW_BLOCK,"Rainbow Block");

@@ -32,10 +32,17 @@ public class ModItemGroups
                         .entries((displayContext, entries) -> {
                             entries.add(ModItems.ICE_ETHER);
                             entries.add(ModItems.SHIT);
-                            entries.add(ModItems.SWORD);
+                            entries.add(ModItems.MY_SWORD);
                             entries.add(ModItems.CORN);
                             entries.add(ModItems.BLUEBARRY);
                             entries.add(ModItems.URANIUM);
+                            entries.add(ModItems.FIRE_ETHER);
+                            entries.add(ModItems.FIRE_ETHER_SWORD);
+                            entries.add(ModItems.FIRE_ETHER_SHOVEL);
+                            entries.add(ModItems.FIRE_ETHER_PICKAXE);
+                            entries.add(ModItems.FIRE_ETHER_AXE);
+                            entries.add(ModItems.FIRE_ETHER_HOE);
+
                         })
                         .build()
         );

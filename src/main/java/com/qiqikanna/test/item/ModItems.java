@@ -15,10 +15,21 @@ public class ModItems
     //别忘了语言文件，模型文件，用数据生成
     public static final Item ICE_ETHER = register("ice_ether",new Item(new Item.Settings()));
     public static final Item SHIT = register("shit",new Item(new Item.Settings().food(ModFoodComponents.SHIT)));
-    public static final Item SWORD = register("sword",new SwordItem(ToolMaterials.DIAMOND,10,4.0f,new Item.Settings().maxCount(1)));
+    public static final Item MY_SWORD = register("my_sword",new SwordItem(ToolMaterials.DIAMOND,10,4.0f,new Item.Settings()));
     public static final Item CORN = register("corn",new Item(new Item.Settings().food(ModFoodComponents.CORN)));
     public static final Item BLUEBARRY = register("bluebarry",new Item(new Item.Settings().food(ModFoodComponents.BLUEBERRY)));
     public static final Item URANIUM = register("uranium",new Item(new Item.Settings()));
+    public static final Item FIRE_ETHER = register("fire_ether",new Item(new Item.Settings()));
+    public static final Item FIRE_ETHER_SWORD = register("fire_ether_sword",
+            new SwordItem(ModToolMaterials.FIRE_ETHER, 3,-2.0F,new Item.Settings()));
+    public static final Item FIRE_ETHER_SHOVEL = register("fire_ether_shovel",
+            new ShovelItem(ModToolMaterials.FIRE_ETHER, 1.5F,-3.0F,new Item.Settings()));
+    public static final Item FIRE_ETHER_PICKAXE = register("fire_ether_pickaxe",
+            new PickaxeItem(ModToolMaterials.FIRE_ETHER, 2,-3.0F,new Item.Settings()));
+    public static final Item FIRE_ETHER_AXE = register("fire_ether_axe",
+            new AxeItem(ModToolMaterials.FIRE_ETHER, 6,-3.0F,new Item.Settings()));
+    public static final Item FIRE_ETHER_HOE = register("fire_ether_hoe",
+            new HoeItem(ModToolMaterials.FIRE_ETHER, 0,-1.0F,new Item.Settings()));
 
     public static final Item BASKETBALL_BLOCK = register(ModBlocks.BASKETBALL_BLOCK);
     public static final Item RAINBOW_BLOCK = register(ModBlocks.RAINBOW_BLOCK);

@@ -1,5 +1,6 @@
 package com.qiqikanna.test.entity.projectile.thrown;
 
+import com.qiqikanna.test.entity.ModEntityType;
 import com.qiqikanna.test.item.ModItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -13,8 +14,14 @@ import net.minecraft.world.explosion.ExplosionBehavior;
 public class TestEntity extends ThrownItemEntity
 {
     public TestEntity(World world, LivingEntity owner) {
-        super(EntityType.EGG, owner, world);
+        super(ModEntityType.TEST_ENTITY, owner, world);
     }
+
+    public TestEntity(EntityType<? extends TestEntity> entityType, World world)
+    {
+        super(entityType,world);
+    }
+
 
     @Override
     protected Item getDefaultItem()
