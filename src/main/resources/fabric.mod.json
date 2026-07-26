@@ -3,7 +3,7 @@
 	"id": "test-mod",
 	"version": "${version}",
 	"name": "test mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This is a test mod, and the content is about the mountain of crap I learned to make mods",
 	"authors": [
 		"Me!"
 	],
@@ -23,6 +23,9 @@
 		],
 		"client": [
 			"com.qiqikanna.test.TestModClient"
+		],
+		"modmenu": [
+			"com.qiqikanna.test.TestModModMenuApiImpl"
 		]
 	},
 	"mixins": [

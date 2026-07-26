@@ -9,6 +9,7 @@ import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.item.ArmorItem;
 
 public class ModModelProvider extends FabricModelProvider
 {
@@ -44,5 +45,12 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.FIRE_ETHER_AXE,Models.HANDHELD);
         itemModelGenerator.register(ModItems.FIRE_ETHER_SHOVEL,Models.HANDHELD);
         itemModelGenerator.register(ModItems.FIRE_ETHER_HOE,Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PICKAXE_AXE,Models.HANDHELD);
+        //盔甲的方法不太一样
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_BOOTS);
+
     }
 }

@@ -24,5 +24,12 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.BLUEBARRY)
                 .add(ModItems.CORN)
                 .forceAddTag(ItemTags.FOX_FOOD);//用forceAddTag把原版Tag中的项添加过来
+
+        //关于盔甲锻造的tag，似乎是让盔甲可以被锻造纹样
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.ICE_ETHER_HELMET)
+                .add(ModItems.ICE_ETHER_CHESTPLATE)
+                .add(ModItems.ICE_ETHER_LEGGINGS)
+                .add(ModItems.ICE_ETHER_BOOTS);
     }
 }

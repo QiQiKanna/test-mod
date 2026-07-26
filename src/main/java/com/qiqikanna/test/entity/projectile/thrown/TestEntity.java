@@ -1,6 +1,5 @@
 package com.qiqikanna.test.entity.projectile.thrown;
 
-import com.qiqikanna.test.entity.ModEntityType;
 import com.qiqikanna.test.item.ModItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -14,7 +13,8 @@ import net.minecraft.world.explosion.ExplosionBehavior;
 public class TestEntity extends ThrownItemEntity
 {
     public TestEntity(World world, LivingEntity owner) {
-        super(ModEntityType.TEST_ENTITY, owner, world);
+        //super(ModEntityType.TEST_ENTITY, owner, world);
+        super(EntityType.ENDER_PEARL, owner, world);
     }
 
     public TestEntity(EntityType<? extends TestEntity> entityType, World world)

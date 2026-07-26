@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 public class ModBlockTags
 {
     public static final TagKey<Block> ICE_ETHERS = of("ice_ethers");
+    public static final TagKey<Block> PICKAXE_AXE = of("pickaxe_axe");
 
     private static TagKey<Block> of(String id) {
         return TagKey.of(RegistryKeys.BLOCK, new Identifier(TestMod.MOD_ID,id));

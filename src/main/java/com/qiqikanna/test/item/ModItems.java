@@ -2,6 +2,7 @@ package com.qiqikanna.test.item;
 
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.block.ModBlocks;
+import com.qiqikanna.test.item.custom.PickaxeAxeItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -30,6 +31,16 @@ public class ModItems
             new AxeItem(ModToolMaterials.FIRE_ETHER, 6,-3.0F,new Item.Settings()));
     public static final Item FIRE_ETHER_HOE = register("fire_ether_hoe",
             new HoeItem(ModToolMaterials.FIRE_ETHER, 0,-1.0F,new Item.Settings()));
+    public static final Item PICKAXE_AXE = register("pickaxe_axe",
+            new PickaxeAxeItem(ModToolMaterials.FIRE_ETHER,6.0F,-2.8F,new Item.Settings()));
+    public static final Item ICE_ETHER_HELMET = register("ice_ether_helmet",
+            new ArmorItem(ModArmorMaterials.ICE_ETHER,ArmorItem.Type.HELMET,new Item.Settings()));
+    public static final Item ICE_ETHER_BOOTS = register("ice_ether_boots",
+            new ArmorItem(ModArmorMaterials.ICE_ETHER,ArmorItem.Type.BOOTS,new Item.Settings()));
+    public static final Item ICE_ETHER_CHESTPLATE = register("ice_ether_chestplate",
+            new ArmorItem(ModArmorMaterials.ICE_ETHER,ArmorItem.Type.CHESTPLATE,new Item.Settings()));
+    public static final Item ICE_ETHER_LEGGINGS = register("ice_ether_leggings",
+            new ArmorItem(ModArmorMaterials.ICE_ETHER,ArmorItem.Type.LEGGINGS,new Item.Settings()));
 
     public static final Item BASKETBALL_BLOCK = register(ModBlocks.BASKETBALL_BLOCK);
     public static final Item RAINBOW_BLOCK = register(ModBlocks.RAINBOW_BLOCK);
