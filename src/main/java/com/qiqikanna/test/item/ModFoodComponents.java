@@ -20,4 +20,14 @@ public class ModFoodComponents
             .statusEffect(new StatusEffectInstance(StatusEffects.POISON,5*20),0.75f)
             .meat()
             .build();
+    public static final FoodComponent STRAWBERRY = new FoodComponent.Builder()
+            .hunger(1).saturationModifier(0.2f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,30*20),0.8f)
+            .alwaysEdible()
+            .build();
+    public static final FoodComponent LUMEN_BERRIES = new FoodComponent.Builder()
+            .hunger(1).saturationModifier(0.3f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION,3*20),1.0f)
+            .alwaysEdible()
+            .build();
 }

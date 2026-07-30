@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements StringIdentifiable, ArmorMaterial
 {
-    ICE_ETHER("ice_ether", 40, Util.make(new EnumMap(ArmorItem.Type.class), map -> {
+    ICE_ETHER("ice_ether", 40, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 3);
         map.put(ArmorItem.Type.LEGGINGS, 6);
         map.put(ArmorItem.Type.CHESTPLATE, 8);
@@ -22,7 +22,7 @@ public enum ModArmorMaterials implements StringIdentifiable, ArmorMaterial
     }), 30, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.ofItems(ModItems.ICE_ETHER));
 
 
-    private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY = Util.make(new EnumMap(ArmorItem.Type.class), map -> {
+    private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY = Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 13);
         map.put(ArmorItem.Type.LEGGINGS, 15);
         map.put(ArmorItem.Type.CHESTPLATE, 16);
@@ -78,7 +78,7 @@ public enum ModArmorMaterials implements StringIdentifiable, ArmorMaterial
     @Override
     public String getName() {
         return TestMod.MOD_ID + ":" + this.name;
-    }
+    }//这里一定要加上modid，否则贴图就在minecraft的命名空间下找，找不到贴图
 
     @Override
     public float getToughness() {

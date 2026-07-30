@@ -1,15 +1,18 @@
 package com.qiqikanna.test.datagen;
 
+import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.block.ModBlockFamilies;
 import com.qiqikanna.test.block.ModBlocks;
+import com.qiqikanna.test.block.custom.CornCropBlock;
+import com.qiqikanna.test.block.custom.StrawberryCropBlock;
 import com.qiqikanna.test.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
+import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.Identifier;
 
 public class ModModelProvider extends FabricModelProvider
 {
@@ -24,6 +27,46 @@ public class ModModelProvider extends FabricModelProvider
         //blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ICE_ETHER_BLOCK); //这个在方块家族内了，不需要重复写
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAINBOW_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BASKETBALL_BLOCK);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.HEMOSTONE, TexturedModel.CUBE_COLUMN);
+
+        blockStateModelGenerator.registerCrop(ModBlocks.STRAWBERRY_CROP, StrawberryCropBlock.AGE,0,1,2,3,4,5);
+        blockStateModelGenerator.blockStateCollector
+                .accept(
+                        VariantsBlockStateSupplier.create(ModBlocks.CORN_CROP)
+                                .coordinate(
+                                        BlockStateVariantMap.create(CornCropBlock.AGE)
+                                                .register(
+                                                        stage -> BlockStateVariant.create()
+                                                                .put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.CORN_CROP, "_stage" + stage, Models.CROSS, TextureMap::cross))
+                                                )
+                                )
+                );
+        blockStateModelGenerator.blockStateCollector
+                .accept(
+                        VariantsBlockStateSupplier.create(ModBlocks.LUMEN_BERRY_BUSH)
+                                .coordinate(
+                                        BlockStateVariantMap.create(Properties.AGE_1)
+                                                .register(
+                                                        stage -> BlockStateVariant.create()
+                                                                .put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.LUMEN_BERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross))
+                                                )
+                                )
+                );
+
+        final TextureMap hemostone_side_texture = TextureMap.all(Identifier.of(TestMod.MOD_ID,"block/hemostone_side"));
+        final Identifier hemostone_stairsModelId = Models.STAIRS.upload(ModBlocks.HEMOSTONE_STAIRS,hemostone_side_texture,blockStateModelGenerator.modelCollector);
+        final Identifier hemostone_innerStairsModelId = Models.INNER_STAIRS.upload(ModBlocks.HEMOSTONE_STAIRS,hemostone_side_texture,blockStateModelGenerator.modelCollector);
+        final Identifier hemostone_outerStairsModelId = Models.OUTER_STAIRS.upload(ModBlocks.HEMOSTONE_STAIRS,hemostone_side_texture,blockStateModelGenerator.modelCollector);
+        blockStateModelGenerator.blockStateCollector.accept(
+            BlockStateModelGenerator.createStairsBlockState(
+                    ModBlocks.HEMOSTONE_STAIRS,
+                    hemostone_innerStairsModelId,
+                    hemostone_stairsModelId,
+                    hemostone_outerStairsModelId
+            ));
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.HEMOSTONE_STAIRS,hemostone_stairsModelId);
+
+
 
         ModBlockFamilies.getFamilies()
                 .filter(BlockFamily::shouldGenerateModels)
@@ -38,6 +81,8 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.MY_SWORD,Models.HANDHELD);
         itemModelGenerator.register(ModItems.CORN, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLUEBARRY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STRAWBERRY,Models.GENERATED);
+        itemModelGenerator.register(ModItems.LUMEN_BERRIES,Models.GENERATED);
         itemModelGenerator.register(ModItems.URANIUM,Models.GENERATED);
         itemModelGenerator.register(ModItems.FIRE_ETHER,Models.GENERATED);
         itemModelGenerator.register(ModItems.FIRE_ETHER_SWORD,Models.HANDHELD);
@@ -46,11 +91,17 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.FIRE_ETHER_SHOVEL,Models.HANDHELD);
         itemModelGenerator.register(ModItems.FIRE_ETHER_HOE,Models.HANDHELD);
         itemModelGenerator.register(ModItems.PICKAXE_AXE,Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ICE_ETHER_HORSE_ARMOR,Models.GENERATED);
+
         //盔甲的方法不太一样
         itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_HELMET);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_CHESTPLATE);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_BOOTS);
+
+        itemModelGenerator.register(ModItems.MUSIC_DISC_BLIZZARD,Models.TEMPLATE_MUSIC_DISC);
+        itemModelGenerator.register(ModItems.MUSIC_DISC_HEMOPHILIA,Models.TEMPLATE_MUSIC_DISC);
+        itemModelGenerator.register(ModItems.MUSIC_DISC_SEEPING_VOID,Models.TEMPLATE_MUSIC_DISC);
 
     }
 }

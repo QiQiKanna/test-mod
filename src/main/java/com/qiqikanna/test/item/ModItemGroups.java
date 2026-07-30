@@ -35,8 +35,13 @@ public class ModItemGroups
                             entries.add(ModItems.MY_SWORD);
                             entries.add(ModItems.CORN);
                             entries.add(ModItems.BLUEBARRY);
+                            entries.add(ModItems.STRAWBERRY);
+                            entries.add(ModItems.STRAWBERRY_SEEDS);
+                            entries.add(ModItems.LUMEN_BERRIES);
+
                             entries.add(ModItems.URANIUM);
                             entries.add(ModItems.FIRE_ETHER);
+                            entries.add(ModItems.BIG_HAMMER);
                             entries.add(ModItems.FIRE_ETHER_SWORD);
                             entries.add(ModItems.FIRE_ETHER_SHOVEL);
                             entries.add(ModItems.FIRE_ETHER_PICKAXE);
@@ -47,7 +52,11 @@ public class ModItemGroups
                             entries.add(ModItems.ICE_ETHER_BOOTS);
                             entries.add(ModItems.ICE_ETHER_LEGGINGS);
                             entries.add(ModItems.ICE_ETHER_CHESTPLATE);
+                            entries.add(ModItems.ICE_ETHER_HORSE_ARMOR);
 
+                            entries.add(ModItems.MUSIC_DISC_BLIZZARD);
+                            entries.add(ModItems.MUSIC_DISC_HEMOPHILIA);
+                            entries.add(ModItems.MUSIC_DISC_SEEPING_VOID);
                         })
                         .build()
         );
@@ -74,6 +83,9 @@ public class ModItemGroups
                             entries.add(ModItems.ICE_ETHER_WALLL);
                             entries.add(ModItems.ICE_ETHER_DOOR);
                             entries.add(ModItems.ICE_ETHER_TRAPDOOR);
+                            entries.add(ModItems.HEMOSTONE);
+                            entries.add(ModItems.HEMOSTONE_STAIRS);
+
                         })
                         .build()
         );

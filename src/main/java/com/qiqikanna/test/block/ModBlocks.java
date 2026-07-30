@@ -1,7 +1,11 @@
 package com.qiqikanna.test.block;
 
 import com.qiqikanna.test.TestMod;
+import com.qiqikanna.test.block.custom.CornCropBlock;
+import com.qiqikanna.test.block.custom.LumenBerryBushBlock;
+import com.qiqikanna.test.block.custom.StrawberryCropBlock;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -49,6 +53,26 @@ public class ModBlocks
             new DoorBlock(AbstractBlock.Settings.copy(ICE_ETHER_BLOCK),BlockSetType.IRON));//门的类型当且仅当是铁的时候只能用红石打开
     public static final Block ICE_ETHER_TRAPDOOR = register("ice_ether_trapdoor",
             new TrapdoorBlock(AbstractBlock.Settings.copy(ICE_ETHER_BLOCK).nonOpaque(),BlockSetType.STONE));
+    public static final Block HEMOSTONE = register("hemostone",new PillarBlock(AbstractBlock.Settings.copy(Blocks.STONE)));
+    public static final Block HEMOSTONE_STAIRS = register("hemostone_stairs",
+            new StairsBlock(HEMOSTONE.getDefaultState(),AbstractBlock.Settings.copy(HEMOSTONE)));
+
+    public static final Block STRAWBERRY_CROP = register("strawberry_crop",
+            new StrawberryCropBlock(AbstractBlock.Settings.create()
+                    .noCollision()//没有碰撞
+                    .ticksRandomly()
+                    .breakInstantly()//立即破坏
+                    .pistonBehavior(PistonBehavior.DESTROY)//活塞推动行为-破坏
+            ));
+    public static final Block CORN_CROP = register("corn_crop",
+            new CornCropBlock(AbstractBlock.Settings.create()
+                    .noCollision()
+                    .ticksRandomly()
+                    .breakInstantly()
+                    .pistonBehavior(PistonBehavior.DESTROY)
+            ));
+    public static final Block LUMEN_BERRY_BUSH = register("lumen_berry_bush",
+            new LumenBerryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)));
 
     //block 的注册方法
     public static Block register(String id, Block block)

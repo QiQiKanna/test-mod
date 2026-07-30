@@ -2,13 +2,17 @@ package com.qiqikanna.test.item;
 
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.block.ModBlocks;
+import com.qiqikanna.test.item.custom.MyHorseArmorItem;
+import com.qiqikanna.test.item.custom.MySwordItem;
 import com.qiqikanna.test.item.custom.PickaxeAxeItem;
+import com.qiqikanna.test.sound.ModSoundEvents;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 public class ModItems
 {
@@ -16,11 +20,21 @@ public class ModItems
     //别忘了语言文件，模型文件，用数据生成
     public static final Item ICE_ETHER = register("ice_ether",new Item(new Item.Settings()));
     public static final Item SHIT = register("shit",new Item(new Item.Settings().food(ModFoodComponents.SHIT)));
-    public static final Item MY_SWORD = register("my_sword",new SwordItem(ToolMaterials.DIAMOND,10,4.0f,new Item.Settings()));
-    public static final Item CORN = register("corn",new Item(new Item.Settings().food(ModFoodComponents.CORN)));
+    public static final Item MY_SWORD = register("my_sword",
+            new MySwordItem(ToolMaterials.DIAMOND,10,4.0f,new Item.Settings()));
+    public static final Item CORN = register("corn",
+            new AliasedBlockItem(ModBlocks.CORN_CROP,new Item.Settings().food(ModFoodComponents.CORN)));
+    public static final Item LUMEN_BERRIES = register("lumen_berries",
+            new AliasedBlockItem(ModBlocks.LUMEN_BERRY_BUSH,new Item.Settings().food(ModFoodComponents.LUMEN_BERRIES)));
     public static final Item BLUEBARRY = register("bluebarry",new Item(new Item.Settings().food(ModFoodComponents.BLUEBERRY)));
     public static final Item URANIUM = register("uranium",new Item(new Item.Settings()));
     public static final Item FIRE_ETHER = register("fire_ether",new Item(new Item.Settings()));
+    public static final Item STRAWBERRY = register("strawberry",new Item(new Item.Settings().food(ModFoodComponents.STRAWBERRY)));
+    public static final Item STRAWBERRY_SEEDS = register("strawberry_seeds",
+            new AliasedBlockItem(ModBlocks.STRAWBERRY_CROP,new Item.Settings()));
+
+    public static final Item BIG_HAMMER = register("big_hammer",
+            new SwordItem(ToolMaterials.NETHERITE,10,-3.0F,new Item.Settings()));
     public static final Item FIRE_ETHER_SWORD = register("fire_ether_sword",
             new SwordItem(ModToolMaterials.FIRE_ETHER, 3,-2.0F,new Item.Settings()));
     public static final Item FIRE_ETHER_SHOVEL = register("fire_ether_shovel",
@@ -36,11 +50,23 @@ public class ModItems
     public static final Item ICE_ETHER_HELMET = register("ice_ether_helmet",
             new ArmorItem(ModArmorMaterials.ICE_ETHER,ArmorItem.Type.HELMET,new Item.Settings()));
     public static final Item ICE_ETHER_BOOTS = register("ice_ether_boots",
-            new ArmorItem(ModArmorMaterials.ICE_ETHER,ArmorItem.Type.BOOTS,new Item.Settings()));
+            new ModArmorItem(ModArmorMaterials.ICE_ETHER,ArmorItem.Type.BOOTS,new Item.Settings()));
     public static final Item ICE_ETHER_CHESTPLATE = register("ice_ether_chestplate",
             new ArmorItem(ModArmorMaterials.ICE_ETHER,ArmorItem.Type.CHESTPLATE,new Item.Settings()));
     public static final Item ICE_ETHER_LEGGINGS = register("ice_ether_leggings",
             new ArmorItem(ModArmorMaterials.ICE_ETHER,ArmorItem.Type.LEGGINGS,new Item.Settings()));
+    public static final Item ICE_ETHER_HORSE_ARMOR = register("ice_ether_horse_armor",
+            new MyHorseArmorItem(11,"ice_ether",new Item.Settings().maxCount(1)));
+
+    public static final Item MUSIC_DISC_BLIZZARD = register("music_disc_blizzard",
+            new MusicDiscItem(1, ModSoundEvents.MUSIC_DISC_BLIZZARD,
+                    new Item.Settings().maxCount(1).rarity(Rarity.RARE),354));
+    public static final Item MUSIC_DISC_HEMOPHILIA = register("music_disc_hemophilia",
+            new MusicDiscItem(1,ModSoundEvents.MUSIC_DISC_HEMOPHILIA,
+                    new Item.Settings().maxCount(1).rarity(Rarity.RARE),588));
+    public static final Item MUSIC_DISC_SEEPING_VOID = register("music_disc_seeping_void",
+            new MusicDiscItem(1,ModSoundEvents.MUSIC_DISC_SEEPING_VOID,
+                    new Item.Settings().maxCount(1).rarity(Rarity.RARE),537));
 
     public static final Item BASKETBALL_BLOCK = register(ModBlocks.BASKETBALL_BLOCK);
     public static final Item RAINBOW_BLOCK = register(ModBlocks.RAINBOW_BLOCK);
@@ -57,6 +83,8 @@ public class ModItems
     public static final Item ICE_ETHER_WALLL = register(ModBlocks.ICE_ETHER_WALLL);
     public static final Item ICE_ETHER_DOOR = register(ModBlocks.ICE_ETHER_DOOR);
     public static final Item ICE_ETHER_TRAPDOOR = register(ModBlocks.ICE_ETHER_TRAPDOOR);
+    public static final Item HEMOSTONE = register(ModBlocks.HEMOSTONE);
+    public static final Item HEMOSTONE_STAIRS = register(ModBlocks.HEMOSTONE_STAIRS);
 
 
 

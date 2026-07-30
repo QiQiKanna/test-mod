@@ -1,7 +1,5 @@
 package com.qiqikanna.test.block;
 
-
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -10,9 +8,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
@@ -76,15 +72,16 @@ public class TestBlock extends Block
 //    public boolean isTransparent(BlockState state, BlockView world, BlockPos pos) {
 //        return true;
 //    }
-//
-//    @Override
-//    public VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-//        return VoxelShapes.empty();
-//    }
 
     @Override
     //我不明白为什么这方法能让方块内部亮起来
     public float getAmbientOcclusionLightLevel(BlockState state, BlockView world, BlockPos pos) {
         return 1.0F;
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
+    {
+        return Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 7.0, 11.0);
     }
 }

@@ -21,14 +21,20 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
         translationBuilder.add(ModItems.MY_SWORD,"随手画的剑");
         translationBuilder.add(ModItems.CORN,"玉米");
         translationBuilder.add(ModItems.BLUEBARRY,"蓝莓");
+        translationBuilder.add(ModItems.STRAWBERRY,"草莓");
+        translationBuilder.add(ModItems.STRAWBERRY_SEEDS,"草莓种子");
+        translationBuilder.add(ModItems.LUMEN_BERRIES,"流明浆果");
         translationBuilder.add(ModItems.URANIUM,"铀");
         translationBuilder.add(ModItems.FIRE_ETHER,"火以太");
+
+        translationBuilder.add(ModItems.BIG_HAMMER,"雷霆宇宙大战锤");
         translationBuilder.add(ModItems.FIRE_ETHER_SWORD,"火以太剑");
         translationBuilder.add(ModItems.FIRE_ETHER_SHOVEL,"火以太锹");
         translationBuilder.add(ModItems.FIRE_ETHER_PICKAXE,"火以太镐");
         translationBuilder.add(ModItems.FIRE_ETHER_AXE,"火以太斧");
         translationBuilder.add(ModItems.FIRE_ETHER_HOE,"火以太锄");
         translationBuilder.add(ModItems.PICKAXE_AXE,"镐斧");
+        translationBuilder.add(ModItems.ICE_ETHER_HORSE_ARMOR,"冰以太马凯");
 
         translationBuilder.add(ModBlocks.BASKETBALL_BLOCK,"篮球");
         translationBuilder.add(ModBlocks.RAINBOW_BLOCK,"彩虹块");
@@ -48,6 +54,15 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
         translationBuilder.add(ModItems.ICE_ETHER_BOOTS,"冰以太靴");
         translationBuilder.add(ModItems.ICE_ETHER_CHESTPLATE,"冰以太胸甲");
         translationBuilder.add(ModItems.ICE_ETHER_LEGGINGS,"冰以太护腿");
+
+        translationBuilder.add(ModItems.MUSIC_DISC_BLIZZARD,"音乐唱片");
+        translationBuilder.add(ModItems.MUSIC_DISC_BLIZZARD.getTranslationKey() + ".desc","Blizzard - Rupter");
+        translationBuilder.add(ModItems.MUSIC_DISC_HEMOPHILIA,"音乐唱片");
+        translationBuilder.add(ModItems.MUSIC_DISC_HEMOPHILIA.getTranslationKey() + ".desc","Hemophilia - Rupter");
+        translationBuilder.add(ModItems.MUSIC_DISC_SEEPING_VOID,"音乐唱片");
+        translationBuilder.add(ModItems.MUSIC_DISC_SEEPING_VOID.getTranslationKey() + ".desc","Seeping Void - Rupter");
+
+        translationBuilder.add(ModBlocks.LUMEN_BERRY_BUSH,"流明浆果丛");
 
         translationBuilder.add(ModItemGroups.TESTMOD_GROUP,"测试模组");
         translationBuilder.add(ModItemGroups.TESTMOD_BLOCK,"测试模组方块");

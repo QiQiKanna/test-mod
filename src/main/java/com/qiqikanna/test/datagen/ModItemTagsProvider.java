@@ -31,5 +31,10 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.ICE_ETHER_CHESTPLATE)
                 .add(ModItems.ICE_ETHER_LEGGINGS)
                 .add(ModItems.ICE_ETHER_BOOTS);
+
+        getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
+                .add(ModItems.MUSIC_DISC_BLIZZARD)
+                .add(ModItems.MUSIC_DISC_HEMOPHILIA)
+                .add(ModItems.MUSIC_DISC_SEEPING_VOID);
     }
 }

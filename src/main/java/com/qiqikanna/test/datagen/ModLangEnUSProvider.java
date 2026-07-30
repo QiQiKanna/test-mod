@@ -18,21 +18,36 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
     {
         translationBuilder.add(ModItems.ICE_ETHER,"Ice Ether");
         translationBuilder.add(ModItems.SHIT,"Shit");
-        translationBuilder.add(ModItems.MY_SWORD,"My Sword");
         translationBuilder.add(ModItems.CORN,"Corn");
         translationBuilder.add(ModItems.BLUEBARRY,"Bluebarry");
+        translationBuilder.add(ModItems.STRAWBERRY,"Strawberry");
+        translationBuilder.add(ModItems.STRAWBERRY_SEEDS,"Strawberry Seeds");
+        translationBuilder.add(ModItems.LUMEN_BERRIES,"Lumen Berries");
         translationBuilder.add(ModItems.URANIUM,"Uranium");
         translationBuilder.add(ModItems.FIRE_ETHER,"Fire Ether");
+        translationBuilder.add(ModItems.ICE_ETHER_HORSE_ARMOR,"Ice Ether Hourse Armor");
+
+        translationBuilder.add(ModItems.BIG_HAMMER,"Big Hammer");
+        translationBuilder.add(ModItems.MY_SWORD,"My Sword");
         translationBuilder.add(ModItems.FIRE_ETHER_SWORD,"Fire Ether Sword");
         translationBuilder.add(ModItems.FIRE_ETHER_SHOVEL,"Fire Ether Shovel");
         translationBuilder.add(ModItems.FIRE_ETHER_PICKAXE,"Fire Ether Pickaxe");
         translationBuilder.add(ModItems.FIRE_ETHER_AXE,"Fire Ether Axe");
         translationBuilder.add(ModItems.FIRE_ETHER_HOE,"Fire Ether Hoe");
         translationBuilder.add(ModItems.PICKAXE_AXE,"Pickaxe Axe");
+
         translationBuilder.add(ModItems.ICE_ETHER_HELMET,"Ice Ether Helmet");
         translationBuilder.add(ModItems.ICE_ETHER_BOOTS,"Ice Ether Boots");
         translationBuilder.add(ModItems.ICE_ETHER_CHESTPLATE,"Ice Ether Chestplate");
         translationBuilder.add(ModItems.ICE_ETHER_LEGGINGS,"Ice Ether Leggings");
+
+        translationBuilder.add(ModItems.MUSIC_DISC_BLIZZARD,"Music Disc");
+        translationBuilder.add(ModItems.MUSIC_DISC_BLIZZARD.getTranslationKey() + ".desc","Blizzard - Rupter");
+        translationBuilder.add(ModItems.MUSIC_DISC_HEMOPHILIA,"Music Disc");
+        translationBuilder.add(ModItems.MUSIC_DISC_HEMOPHILIA.getTranslationKey() + ".desc","Hemophilia - Rupter");
+        translationBuilder.add(ModItems.MUSIC_DISC_SEEPING_VOID,"Music Disc");
+        translationBuilder.add(ModItems.MUSIC_DISC_SEEPING_VOID.getTranslationKey() + ".desc","Seeping Void - Rupter");
+
 
         translationBuilder.add(ModBlocks.BASKETBALL_BLOCK,"Basketball");
         translationBuilder.add(ModBlocks.RAINBOW_BLOCK,"Rainbow Block");
@@ -48,6 +63,10 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add(ModBlocks.ICE_ETHER_WALLL,"Ice Ether Wall");
         translationBuilder.add(ModBlocks.ICE_ETHER_DOOR,"Ice Ether Door");
         translationBuilder.add(ModBlocks.ICE_ETHER_TRAPDOOR,"Ice Ether Trapdoor");
+        translationBuilder.add(ModBlocks.HEMOSTONE,"Hemostone");
+        translationBuilder.add(ModBlocks.HEMOSTONE_STAIRS,"Hemostone Stairs");
+
+        translationBuilder.add(ModBlocks.LUMEN_BERRY_BUSH,"Lumen Berry Bush");
 
         translationBuilder.add(ModItemGroups.TESTMOD_GROUP,"test mod");
         translationBuilder.add(ModItemGroups.TESTMOD_BLOCK,"test mod block");
