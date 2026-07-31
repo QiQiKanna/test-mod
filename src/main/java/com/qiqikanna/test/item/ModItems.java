@@ -2,9 +2,7 @@ package com.qiqikanna.test.item;
 
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.block.ModBlocks;
-import com.qiqikanna.test.item.custom.MyHorseArmorItem;
-import com.qiqikanna.test.item.custom.MySwordItem;
-import com.qiqikanna.test.item.custom.PickaxeAxeItem;
+import com.qiqikanna.test.item.custom.*;
 import com.qiqikanna.test.sound.ModSoundEvents;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
@@ -27,7 +25,7 @@ public class ModItems
     public static final Item LUMEN_BERRIES = register("lumen_berries",
             new AliasedBlockItem(ModBlocks.LUMEN_BERRY_BUSH,new Item.Settings().food(ModFoodComponents.LUMEN_BERRIES)));
     public static final Item BLUEBARRY = register("bluebarry",new Item(new Item.Settings().food(ModFoodComponents.BLUEBERRY)));
-    public static final Item URANIUM = register("uranium",new Item(new Item.Settings()));
+    public static final Item URANIUM = register("uranium",new SimpleDescItem(new Item.Settings()));
     public static final Item FIRE_ETHER = register("fire_ether",new Item(new Item.Settings()));
     public static final Item STRAWBERRY = register("strawberry",new Item(new Item.Settings().food(ModFoodComponents.STRAWBERRY)));
     public static final Item STRAWBERRY_SEEDS = register("strawberry_seeds",

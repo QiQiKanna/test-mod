@@ -1,6 +1,7 @@
-package com.qiqikanna.test.item;
+package com.qiqikanna.test.item.custom;
 
 import com.google.common.collect.ImmutableMap;
+import com.qiqikanna.test.item.ModArmorMaterials;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;

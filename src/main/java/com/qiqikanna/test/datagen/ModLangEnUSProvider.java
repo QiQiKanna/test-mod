@@ -3,6 +3,7 @@ package com.qiqikanna.test.datagen;
 import com.qiqikanna.test.block.ModBlocks;
 import com.qiqikanna.test.item.ModItemGroups;
 import com.qiqikanna.test.item.ModItems;
+import com.qiqikanna.test.item.custom.SimpleDescItem;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
@@ -23,7 +24,6 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add(ModItems.STRAWBERRY,"Strawberry");
         translationBuilder.add(ModItems.STRAWBERRY_SEEDS,"Strawberry Seeds");
         translationBuilder.add(ModItems.LUMEN_BERRIES,"Lumen Berries");
-        translationBuilder.add(ModItems.URANIUM,"Uranium");
         translationBuilder.add(ModItems.FIRE_ETHER,"Fire Ether");
         translationBuilder.add(ModItems.ICE_ETHER_HORSE_ARMOR,"Ice Ether Hourse Armor");
 
@@ -40,6 +40,11 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add(ModItems.ICE_ETHER_BOOTS,"Ice Ether Boots");
         translationBuilder.add(ModItems.ICE_ETHER_CHESTPLATE,"Ice Ether Chestplate");
         translationBuilder.add(ModItems.ICE_ETHER_LEGGINGS,"Ice Ether Leggings");
+
+        SimpleDescItem.addTranslations((SimpleDescItem) ModItems.URANIUM,
+                "Uranium",
+                "It can be used as fuel and seems to burn for quite a long time",
+                translationBuilder);
 
         translationBuilder.add(ModItems.MUSIC_DISC_BLIZZARD,"Music Disc");
         translationBuilder.add(ModItems.MUSIC_DISC_BLIZZARD.getTranslationKey() + ".desc","Blizzard - Rupter");
