@@ -25,7 +25,7 @@ public class LumenBerryBushBlock extends PlantBlock implements Fertilizable
 {
     public static final int MAX_AGE = 1;
     public static final IntProperty AGE = Properties.AGE_1;
-    private static final VoxelShape SHAPE = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
 
     public LumenBerryBushBlock(Settings settings)
     {
