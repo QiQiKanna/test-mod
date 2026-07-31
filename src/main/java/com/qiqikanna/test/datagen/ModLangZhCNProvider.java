@@ -3,6 +3,7 @@ package com.qiqikanna.test.datagen;
 import com.qiqikanna.test.block.ModBlocks;
 import com.qiqikanna.test.item.ModItemGroups;
 import com.qiqikanna.test.item.ModItems;
+import com.qiqikanna.test.item.custom.SimpleDescItem;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
@@ -24,7 +25,6 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
         translationBuilder.add(ModItems.STRAWBERRY,"草莓");
         translationBuilder.add(ModItems.STRAWBERRY_SEEDS,"草莓种子");
         translationBuilder.add(ModItems.LUMEN_BERRIES,"流明浆果");
-        translationBuilder.add(ModItems.URANIUM,"铀");
         translationBuilder.add(ModItems.FIRE_ETHER,"火以太");
 
         translationBuilder.add(ModItems.BIG_HAMMER,"雷霆宇宙大战锤");
@@ -54,6 +54,13 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
         translationBuilder.add(ModItems.ICE_ETHER_BOOTS,"冰以太靴");
         translationBuilder.add(ModItems.ICE_ETHER_CHESTPLATE,"冰以太胸甲");
         translationBuilder.add(ModItems.ICE_ETHER_LEGGINGS,"冰以太护腿");
+
+        SimpleDescItem.addTranslations((SimpleDescItem) ModItems.URANIUM,
+                "铀",
+                "可以作为燃料，似乎能烧挺久",
+                translationBuilder
+        );
+
 
         translationBuilder.add(ModItems.MUSIC_DISC_BLIZZARD,"音乐唱片");
         translationBuilder.add(ModItems.MUSIC_DISC_BLIZZARD.getTranslationKey() + ".desc","Blizzard - Rupter");
