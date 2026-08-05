@@ -1,6 +1,6 @@
 package com.qiqikanna.test.item.custom;
 
-import com.qiqikanna.test.entity.projectile.thrown.TestEntity;
+import com.qiqikanna.test.entity.custom.projectile.thrown.TestEntity;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;

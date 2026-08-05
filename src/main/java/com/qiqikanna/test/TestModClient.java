@@ -1,8 +1,12 @@
 package com.qiqikanna.test;
 
 import com.qiqikanna.test.block.ModBlocks;
+import com.qiqikanna.test.entity.ModEntityModelLayers;
+import com.qiqikanna.test.entity.ModEntityRendererRegistry;
+import com.qiqikanna.test.entity.model.CubeEntityModel;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.RenderLayer;
 
 public class TestModClient implements ClientModInitializer
@@ -10,6 +14,11 @@ public class TestModClient implements ClientModInitializer
     @Override
     public void onInitializeClient()
     {
+        // 注册模型层 — 必须在注册渲染器之前！
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.CUBE, CubeEntityModel::getTexturedModelData);
+
+        ModEntityRendererRegistry.register();
+
         //让方块材质正常透明，不写就变黑色了//草了，为毛不生效啊//雾草找到原因了，忘了在fabric.mod.json里写client了
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ICE_ETHER_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ICE_ETHER_TRAPDOOR, RenderLayer.getCutout());

@@ -19,7 +19,10 @@ public class ModSoundEvents
     private static SoundEvent register(Identifier id) {
         return register(id, id);
     }
+
     private static SoundEvent register(Identifier id, Identifier soundId) {
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(soundId));
     }
+
+    public static void registerSoundEvents(){}
 }

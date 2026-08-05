@@ -11,8 +11,11 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+
+import java.util.Optional;
 
 public class ModModelProvider extends FabricModelProvider
 {
@@ -103,5 +106,16 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.MUSIC_DISC_HEMOPHILIA,Models.TEMPLATE_MUSIC_DISC);
         itemModelGenerator.register(ModItems.MUSIC_DISC_SEEPING_VOID,Models.TEMPLATE_MUSIC_DISC);
 
+        registerSpawnEgg(ModItems.CUBE_ENTITY_SPAWN_EGG,itemModelGenerator);
+
+    }
+
+    public void registerSpawnEgg(Item item,ItemModelGenerator itemModelGenerator)
+    {
+        new Model(Optional.of(new Identifier("minecraft:item/template_spawn_egg")), Optional.empty())
+                .upload(ModelIds.getItemModelId(item),
+                        TextureMap.layer0(new Identifier("item/spawn_egg")),
+                        itemModelGenerator.writer
+                );
     }
 }

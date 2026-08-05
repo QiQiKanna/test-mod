@@ -57,6 +57,8 @@ public class ModItemGroups
                             entries.add(ModItems.MUSIC_DISC_BLIZZARD);
                             entries.add(ModItems.MUSIC_DISC_HEMOPHILIA);
                             entries.add(ModItems.MUSIC_DISC_SEEPING_VOID);
+
+                            entries.add(ModItems.CUBE_ENTITY_SPAWN_EGG);
                         })
                         .build()
         );

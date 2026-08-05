@@ -1,9 +1,13 @@
 package com.qiqikanna.test;
 
 import com.qiqikanna.test.block.ModBlocks;
-import com.qiqikanna.test.entity.ModEntityType;
+import com.qiqikanna.test.entity.ModEntityAttributesRegistry;
+import com.qiqikanna.test.entity.ModEntityTypes;
 import com.qiqikanna.test.item.ModItemGroups;
 import com.qiqikanna.test.item.ModItems;
+import com.qiqikanna.test.sound.ModSoundEvents;
+import com.qiqikanna.test.village.ModTrades;
+import com.qiqikanna.test.village.ModVillagers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -25,8 +29,12 @@ public class TestMod implements ModInitializer {
 
 		ModItems.registerItems();
 		ModItemGroups.registerGroups();
-		ModBlocks.registerModBlocks();
-		ModEntityType.registerModEntityType();
+		ModBlocks.registerBlocks();
+		ModEntityTypes.registerEntityType();
+		ModEntityAttributesRegistry.register();
+		ModSoundEvents.registerSoundEvents();
+		ModTrades.registerTrades();
+		ModVillagers.registerVillagers();
 
 		//fabric api 注册燃料的方法
 		//FuelRegistry.INSTANCE.add(ModItems.URANIUM,32767);

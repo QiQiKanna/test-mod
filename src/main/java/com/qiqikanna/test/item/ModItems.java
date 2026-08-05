@@ -2,6 +2,7 @@ package com.qiqikanna.test.item;
 
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.block.ModBlocks;
+import com.qiqikanna.test.entity.ModEntityTypes;
 import com.qiqikanna.test.item.custom.*;
 import com.qiqikanna.test.sound.ModSoundEvents;
 import net.minecraft.block.Block;
@@ -83,6 +84,9 @@ public class ModItems
     public static final Item ICE_ETHER_TRAPDOOR = register(ModBlocks.ICE_ETHER_TRAPDOOR);
     public static final Item HEMOSTONE = register(ModBlocks.HEMOSTONE);
     public static final Item HEMOSTONE_STAIRS = register(ModBlocks.HEMOSTONE_STAIRS);
+
+    public static final Item CUBE_ENTITY_SPAWN_EGG = register("cube_entity_spawn_egg",
+            new SpawnEggItem(ModEntityTypes.CUBE_ENTITY,1,20,new Item.Settings()));
 
 
 

@@ -1,4 +1,4 @@
-package com.qiqikanna.test.entity.projectile.thrown;
+package com.qiqikanna.test.entity.custom.projectile.thrown;
 
 import com.qiqikanna.test.item.ModItems;
 import net.minecraft.entity.EntityType;

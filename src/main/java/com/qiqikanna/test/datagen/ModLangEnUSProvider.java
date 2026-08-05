@@ -1,6 +1,7 @@
 package com.qiqikanna.test.datagen;
 
 import com.qiqikanna.test.block.ModBlocks;
+import com.qiqikanna.test.entity.ModEntityTypes;
 import com.qiqikanna.test.item.ModItemGroups;
 import com.qiqikanna.test.item.ModItems;
 import com.qiqikanna.test.item.custom.SimpleDescItem;
@@ -53,7 +54,6 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add(ModItems.MUSIC_DISC_SEEPING_VOID,"Music Disc");
         translationBuilder.add(ModItems.MUSIC_DISC_SEEPING_VOID.getTranslationKey() + ".desc","Seeping Void - Rupter");
 
-
         translationBuilder.add(ModBlocks.BASKETBALL_BLOCK,"Basketball");
         translationBuilder.add(ModBlocks.RAINBOW_BLOCK,"Rainbow Block");
         translationBuilder.add(ModBlocks.ICE_ETHER_BLOCK,"Ice Ether Block");
@@ -73,8 +73,14 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
 
         translationBuilder.add(ModBlocks.LUMEN_BERRY_BUSH,"Lumen Berry Bush");
 
+        translationBuilder.add(ModItems.CUBE_ENTITY_SPAWN_EGG,"Cube Entity Spawn Egg");
+
         translationBuilder.add(ModItemGroups.TESTMOD_GROUP,"test mod");
         translationBuilder.add(ModItemGroups.TESTMOD_BLOCK,"test mod block");
+
+        translationBuilder.add(ModEntityTypes.CUBE_ENTITY,"Cube Entity");
+
+        translationBuilder.add("entity.minecraft.villager.ice_ether_master","Ice Ether Master");
 
         translationBuilder.add("tooltip.test-mod.pickaxe_axe.shift","It can serve both as an axe and as a pickaxe");
         translationBuilder.add("tooltip.test-mod.press_shift","Hold §6Shift§r for more info");

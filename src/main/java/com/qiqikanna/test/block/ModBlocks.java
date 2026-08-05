@@ -14,7 +14,10 @@ import net.minecraft.util.Identifier;
 public class ModBlocks
 {
     public static final Block BASKETBALL_BLOCK = register("basketball_block",new Block(AbstractBlock.Settings.copy(Blocks.STONE)));
-    public static final Block ICE_ETHER_BLOCK = register("ice_ether_block",new Block(AbstractBlock.Settings.copy(Blocks.STONE)));
+    public static final Block ICE_ETHER_BLOCK = register("ice_ether_block",
+            new Block(AbstractBlock.Settings.copy(Blocks.STONE)
+                    .nonOpaque()
+                    ));
     public static final Block RAINBOW_BLOCK = register(
             "rainbow_block",
             new Block(AbstractBlock.Settings.create()
@@ -91,7 +94,7 @@ public class ModBlocks
 //        return Registry.register(Registries.BLOCK,new Identifier(TestMod.MOD_ID,id),block);
 //    }
 
-    public static void registerModBlocks()
+    public static void registerBlocks()
     {
 
     }
