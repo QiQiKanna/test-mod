@@ -1,13 +1,17 @@
 package com.qiqikanna.test.item.custom;
 
+import com.qiqikanna.test.sound.ModSoundEvents;
 import com.qiqikanna.test.tag.ModBlockTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,4 +52,23 @@ public class PickaxeAxeItem extends AxeItem
         }
     }
 
+    @Override
+    public ActionResult useOnBlock(ItemUsageContext context)
+    {
+        super.useOnBlock(context);
+        World world = context.getWorld();
+        if (!world.isClient())
+        {
+            BlockState state = world.getBlockState(context.getBlockPos());
+            if (state.isIn(ModBlockTags.PICKAXE_AXE))
+            {
+                world.playSound(null,
+                        context.getBlockPos(),
+                        ModSoundEvents.ITEM_PICKAXE_AXE_USE,
+                        SoundCategory.BLOCKS,
+                        1.0F,1.0F);
+            }
+        }
+        return ActionResult.SUCCESS;
+    }
 }

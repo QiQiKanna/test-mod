@@ -1,6 +1,7 @@
 package com.qiqikanna.test.datagen;
 
 import com.qiqikanna.test.block.ModBlocks;
+import com.qiqikanna.test.entity.ModEntityTypes;
 import com.qiqikanna.test.item.ModItemGroups;
 import com.qiqikanna.test.item.ModItems;
 import com.qiqikanna.test.item.custom.SimpleDescItem;
@@ -36,6 +37,18 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
         translationBuilder.add(ModItems.PICKAXE_AXE,"镐斧");
         translationBuilder.add(ModItems.ICE_ETHER_HORSE_ARMOR,"冰以太马凯");
 
+        translationBuilder.add(ModItems.ICE_ETHER_HELMET,"冰以太头盔");
+        translationBuilder.add(ModItems.ICE_ETHER_BOOTS,"冰以太靴");
+        translationBuilder.add(ModItems.ICE_ETHER_CHESTPLATE,"冰以太胸甲");
+        translationBuilder.add(ModItems.ICE_ETHER_LEGGINGS,"冰以太护腿");
+
+        translationBuilder.add(ModItems.MUSIC_DISC_BLIZZARD,"音乐唱片");
+        translationBuilder.add(ModItems.MUSIC_DISC_BLIZZARD.getTranslationKey() + ".desc","Blizzard - Rupter");
+        translationBuilder.add(ModItems.MUSIC_DISC_HEMOPHILIA,"音乐唱片");
+        translationBuilder.add(ModItems.MUSIC_DISC_HEMOPHILIA.getTranslationKey() + ".desc","Hemophilia - Rupter");
+        translationBuilder.add(ModItems.MUSIC_DISC_SEEPING_VOID,"音乐唱片");
+        translationBuilder.add(ModItems.MUSIC_DISC_SEEPING_VOID.getTranslationKey() + ".desc","Seeping Void - Rupter");
+
         translationBuilder.add(ModBlocks.BASKETBALL_BLOCK,"篮球");
         translationBuilder.add(ModBlocks.RAINBOW_BLOCK,"彩虹块");
         translationBuilder.add(ModBlocks.ICE_ETHER_BLOCK,"冰以太块");
@@ -50,10 +63,7 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
         translationBuilder.add(ModBlocks.ICE_ETHER_WALLL,"冰以太墙");
         translationBuilder.add(ModBlocks.ICE_ETHER_DOOR,"冰以太门");
         translationBuilder.add(ModBlocks.ICE_ETHER_TRAPDOOR,"冰以太活板门");
-        translationBuilder.add(ModItems.ICE_ETHER_HELMET,"冰以太头盔");
-        translationBuilder.add(ModItems.ICE_ETHER_BOOTS,"冰以太靴");
-        translationBuilder.add(ModItems.ICE_ETHER_CHESTPLATE,"冰以太胸甲");
-        translationBuilder.add(ModItems.ICE_ETHER_LEGGINGS,"冰以太护腿");
+
 
         SimpleDescItem.addTranslations((SimpleDescItem) ModItems.URANIUM,
                 "铀",
@@ -61,18 +71,20 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
                 translationBuilder
         );
 
-
-        translationBuilder.add(ModItems.MUSIC_DISC_BLIZZARD,"音乐唱片");
-        translationBuilder.add(ModItems.MUSIC_DISC_BLIZZARD.getTranslationKey() + ".desc","Blizzard - Rupter");
-        translationBuilder.add(ModItems.MUSIC_DISC_HEMOPHILIA,"音乐唱片");
-        translationBuilder.add(ModItems.MUSIC_DISC_HEMOPHILIA.getTranslationKey() + ".desc","Hemophilia - Rupter");
-        translationBuilder.add(ModItems.MUSIC_DISC_SEEPING_VOID,"音乐唱片");
-        translationBuilder.add(ModItems.MUSIC_DISC_SEEPING_VOID.getTranslationKey() + ".desc","Seeping Void - Rupter");
-
         translationBuilder.add(ModBlocks.LUMEN_BERRY_BUSH,"流明浆果丛");
 
         translationBuilder.add(ModItemGroups.TESTMOD_GROUP,"测试模组");
         translationBuilder.add(ModItemGroups.TESTMOD_BLOCK,"测试模组方块");
+
+        translationBuilder.add(ModEntityTypes.CUBE_ENTITY,"Cube Entity");
+
+        //声音事件subtitle
+        translationBuilder.add("sounds.test-mod.item_pickaxe_axe_use","Pickaxe Axe: Use on Block");
+        translationBuilder.add("sounds.test-mod.block_ice_ether_break","Ice Ether Block: Break");
+        translationBuilder.add("sounds.test-mod.block_ice_ether_place","Ice Ether Block: Place");
+        translationBuilder.add("sounds.test-mod.block_ice_ether_step","Step on the Ice Ether Block");
+        translationBuilder.add("sounds.test-mod.block_ice_ether_fall","Fall on the Ice Ether Block");
+        translationBuilder.add("sounds.test-mod.block_ice_ether_hit","Hit Ice Ether Block");
 
         translationBuilder.add("tooltip.test-mod.pickaxe_axe.shift","它既可以作为斧头又可以作为镐子");
         translationBuilder.add("tooltip.test-mod.press_shift","按下§6Shift§r显示详细信息");

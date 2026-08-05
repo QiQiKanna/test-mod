@@ -80,6 +80,14 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
 
         translationBuilder.add(ModEntityTypes.CUBE_ENTITY,"Cube Entity");
 
+        //声音事件subtitle
+        translationBuilder.add("sounds.test-mod.item_pickaxe_axe_use","Pickaxe Axe: Use on Block");
+        translationBuilder.add("sounds.test-mod.block_ice_ether_break","Ice Ether Block: Break");
+        translationBuilder.add("sounds.test-mod.block_ice_ether_place","Ice Ether Block: Place");
+        translationBuilder.add("sounds.test-mod.block_ice_ether_step","Step on the Ice Ether Block");
+        translationBuilder.add("sounds.test-mod.block_ice_ether_fall","Fall on the Ice Ether Block");
+        translationBuilder.add("sounds.test-mod.block_ice_ether_hit","Hit Ice Ether Block");
+
         translationBuilder.add("entity.minecraft.villager.ice_ether_master","Ice Ether Master");
 
         translationBuilder.add("tooltip.test-mod.pickaxe_axe.shift","It can serve both as an axe and as a pickaxe");

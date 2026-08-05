@@ -4,6 +4,7 @@ import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.block.custom.CornCropBlock;
 import com.qiqikanna.test.block.custom.LumenBerryBushBlock;
 import com.qiqikanna.test.block.custom.StrawberryCropBlock;
+import com.qiqikanna.test.sound.ModBlockSoundGroup;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.registry.Registries;
@@ -13,10 +14,12 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks
 {
-    public static final Block BASKETBALL_BLOCK = register("basketball_block",new Block(AbstractBlock.Settings.copy(Blocks.STONE)));
+    public static final Block BASKETBALL_BLOCK = register("basketball_block",
+            new Block(AbstractBlock.Settings.copy(Blocks.STONE)));
     public static final Block ICE_ETHER_BLOCK = register("ice_ether_block",
             new Block(AbstractBlock.Settings.copy(Blocks.STONE)
                     .nonOpaque()
+                    .sounds(ModBlockSoundGroup.ICE_ETHER)
                     ));
     public static final Block RAINBOW_BLOCK = register(
             "rainbow_block",

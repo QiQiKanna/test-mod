@@ -1,0 +1,62 @@
+{
+  "item.pickaxe_axe.use": {
+    "subtitle": "sounds.test-mod.item_pickaxe_axe_use",
+    "sounds": [
+      "test-mod:item_pickaxe_axe_use"
+    ]
+  },
+  "block.ice_ether.break": {
+    "subtitle": "sounds.test-mod.block_ice_ether_break",
+    "sounds": [
+      "test-mod:block_ice_ether_break"
+    ]
+  },
+  "block.ice_ether.place": {
+    "subtitle": "sounds.test-mod.block_ice_ether_place",
+    "sounds": [
+      "test-mod:block_ice_ether_place"
+    ]
+  },
+  "block.ice_ether.step": {
+    "subtitle": "sounds.test-mod.block_ice_ether_step",
+    "sounds": [
+      "test-mod:block_ice_ether_step"
+    ]
+  },
+  "block.ice_ether.fall": {
+    "subtitle": "sounds.test-mod.block_ice_ether_fall",
+    "sounds": [
+      "test-mod:block_ice_ether_fall"
+    ]
+  },
+  "block.ice_ether.hit": {
+    "subtitle": "sounds.test-mod.block_ice_ether_hit",
+    "sounds": [
+      "test-mod:block_ice_ether_hit"
+    ]
+  },
+  "music_disc.hemophilia": {
+    "sounds": [
+      {
+        "name": "test-mod:music_disc_hemophilia",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc.seeping_void": {
+    "sounds": [
+      {
+        "name": "test-mod:music_disc_seeping_void",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc.blizzard": {
+    "sounds": [
+      {
+        "name": "test-mod:music_disc_blizzard",
+        "stream": true
+      }
+    ]
+  }
+}
