@@ -2,6 +2,7 @@ package com.qiqikanna.test.entity;
 
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.entity.custom.CubeEntity;
+import com.qiqikanna.test.entity.custom.DistortedScoutEntity;
 import com.qiqikanna.test.entity.custom.projectile.thrown.TestEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.Entity;
@@ -24,6 +25,11 @@ public class ModEntityTypes
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE,CubeEntity::new)
                     .dimensions(EntityDimensions.fixed(0.75F,0.75F))
                     .build());
+    public static final EntityType<DistortedScoutEntity> DISTORTED_SCOUT = register("distorted_scout",
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE,DistortedScoutEntity::new)
+                    .dimensions(EntityDimensions.fixed(1.0F,1.0F))
+                    .build());
+
 
     private static <T extends Entity> EntityType<T> register(String id, EntityType.Builder<T> type) {
         return Registry.register(Registries.ENTITY_TYPE, new Identifier(TestMod.MOD_ID,id), type.build(id));
