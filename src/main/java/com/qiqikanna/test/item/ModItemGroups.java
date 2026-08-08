@@ -33,6 +33,7 @@ public class ModItemGroups
                             entries.add(ModItems.ICE_ETHER);
                             entries.add(ModItems.SHIT);
                             entries.add(ModItems.MY_SWORD);
+                            entries.add(ModItems.BASEBALL_BAT);
                             entries.add(ModItems.CORN);
                             entries.add(ModItems.BLUEBARRY);
                             entries.add(ModItems.STRAWBERRY);
@@ -75,6 +76,9 @@ public class ModItemGroups
                             entries.add(ModItems.RAINBOW_BLOCK);
                             entries.add(ModItems.TEST_BLOCK);
                             entries.add(ModItems.CHANDELIER);
+                            entries.add(ModItems.ORANGE_NIGHTSTAND);
+                            entries.add(ModItems.ORANGE_CLOCK);
+                            entries.add(ModItems.SOFA);
 
                             entries.add(ModItems.ICE_ETHER_STAIRS);
                             entries.add(ModItems.ICE_ETHER_SLAB);

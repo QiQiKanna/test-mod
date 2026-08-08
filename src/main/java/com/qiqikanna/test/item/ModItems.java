@@ -32,6 +32,7 @@ public class ModItems
     public static final Item STRAWBERRY_SEEDS = register("strawberry_seeds",
             new AliasedBlockItem(ModBlocks.STRAWBERRY_CROP,new Item.Settings()));
 
+    public static final Item BASEBALL_BAT = register("baseball_bat",new Item(new Item.Settings()));
     public static final Item BIG_HAMMER = register("big_hammer",
             new SwordItem(ToolMaterials.NETHERITE,10,-3.0F,new Item.Settings()));
     public static final Item FIRE_ETHER_SWORD = register("fire_ether_sword",
@@ -72,6 +73,9 @@ public class ModItems
     public static final Item ICE_ETHER_BLOCK = register(ModBlocks.ICE_ETHER_BLOCK);
     public static final Item CHANDELIER = register(ModBlocks.CHANDELIER);
     public static final Item TEST_BLOCK = register(new TestBlockItem(ModBlocks.TEST_BLOCK,new Item.Settings()));
+    public static final Item ORANGE_NIGHTSTAND = register(ModBlocks.ORANGE_NIGHTSTAND);
+    public static final Item ORANGE_CLOCK = register(ModBlocks.ORANGE_CLOCK);
+    public static final Item SOFA = register(ModBlocks.SOFA);
 
     public static final Item ICE_ETHER_STAIRS = register(ModBlocks.ICE_ETHER_STAIRS);
     public static final Item ICE_ETHER_SLAB = register(ModBlocks.ICE_ETHER_SLAB);

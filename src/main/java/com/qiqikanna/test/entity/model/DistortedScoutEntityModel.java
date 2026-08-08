@@ -13,8 +13,14 @@ public class DistortedScoutEntityModel extends EntityModel<DistortedScoutEntity>
 {
 	private final ModelPart root;
 	private final ModelPart leg;
+	private final ModelPart leg2;
+	private final ModelPart leg3;
 	private final ModelPart legtwo;
+	private final ModelPart legtwo2;
+	private final ModelPart legtwo3;
 	private final ModelPart legthree;
+	private final ModelPart legthree2;
+	private final ModelPart legthree3;
 	private final ModelPart body;
 	private final ModelPart spike;
 	private final ModelPart bone2;
@@ -35,11 +41,39 @@ public class DistortedScoutEntityModel extends EntityModel<DistortedScoutEntity>
 	private final ModelPart bone17;
 	private final ModelPart head;
 	private final ModelPart pupil;
+
+//	public static final Animation step = Animation.Builder.create(1.0417F).looping()
+//			.addBoneAnimation("legtwo2", new Transformation(Transformation.Targets.ROTATE,
+//					new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
+//					new Keyframe(0.2917F, AnimationHelper.createRotationalVector(-30.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR)
+//			))
+//			.addBoneAnimation("legtwo2", new Transformation(Transformation.Targets.TRANSLATE,
+//					new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
+//					new Keyframe(0.1667F, AnimationHelper.createTranslationalVector(1.0F, 0.0F, 2.0F), Transformation.Interpolations.LINEAR),
+//					new Keyframe(0.5417F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, -1.0F), Transformation.Interpolations.LINEAR)
+//			))
+//			.addBoneAnimation("legtwo3", new Transformation(Transformation.Targets.ROTATE,
+//					new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
+//					new Keyframe(0.1667F, AnimationHelper.createRotationalVector(-14.66F, 3.2114F, 12.0868F), Transformation.Interpolations.LINEAR),
+//					new Keyframe(0.5417F, AnimationHelper.createRotationalVector(10.34F, 3.2114F, 12.0868F), Transformation.Interpolations.LINEAR)
+//			))
+//			.addBoneAnimation("legtwo3", new Transformation(Transformation.Targets.TRANSLATE,
+//					new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
+//					new Keyframe(0.5417F, AnimationHelper.createTranslationalVector(0.0F, 2.0F, 0.0F), Transformation.Interpolations.LINEAR)
+//			))
+//			.build();
+
 	public DistortedScoutEntityModel(ModelPart root) {
 		this.root = root.getChild("root");
 		this.leg = this.root.getChild("leg");
+		this.leg2 = this.leg.getChild("leg2");
+		this.leg3 = this.leg.getChild("leg3");
 		this.legtwo = this.root.getChild("legtwo");
+		this.legtwo2 = this.legtwo.getChild("legtwo2");
+		this.legtwo3 = this.legtwo.getChild("legtwo3");
 		this.legthree = this.root.getChild("legthree");
+		this.legthree2 = this.legthree.getChild("legthree2");
+		this.legthree3 = this.legthree.getChild("legthree3");
 		this.body = this.root.getChild("body");
 		this.spike = this.body.getChild("spike");
 		this.bone2 = this.spike.getChild("bone2");
@@ -68,27 +102,39 @@ public class DistortedScoutEntityModel extends EntityModel<DistortedScoutEntity>
 
 		ModelPartData leg = root.addChild("leg", ModelPartBuilder.create(), ModelTransform.of(2.673F, -0.5F, -6.5F, 0.6601F, -0.0974F, 0.3873F));
 
-		ModelPartData leg_r1 = leg.addChild("leg_r1", ModelPartBuilder.create().uv(20, 30).cuboid(-1.5F, -1.5F, -5.0F, 8.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.1635F, -0.4273F, 4.0F, 0.0F, 0.0F, -1.3526F));
+		ModelPartData leg2 = leg.addChild("leg2", ModelPartBuilder.create(), ModelTransform.pivot(1.2986F, -7.8578F, 0.0F));
 
-		ModelPartData leg_r2 = leg.addChild("leg_r2", ModelPartBuilder.create().uv(45, 69).cuboid(-0.65F, -0.5F, -9.75F, 1.0F, 1.0F, 4.0F, new Dilation(0.0F))
-		.uv(0, 47).cuboid(-1.15F, -1.0F, -5.75F, 2.0F, 2.0F, 4.0F, new Dilation(0.0F))
-		.uv(28, 34).cuboid(-1.65F, -1.5F, -1.75F, 3.0F, 3.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(1.2986F, -7.8578F, 0.0F, 0.9001F, 0.445F, -0.8555F));
+		ModelPartData leg_r1 = leg2.addChild("leg_r1", ModelPartBuilder.create().uv(0, 47).cuboid(-1.15F, -1.0F, -5.75F, 2.0F, 2.0F, 4.0F, new Dilation(0.0F))
+		.uv(28, 34).cuboid(-1.65F, -1.5F, -1.75F, 3.0F, 3.0F, 4.0F, new Dilation(0.0F))
+		.uv(45, 69).cuboid(-0.65F, -0.5F, -9.75F, 1.0F, 1.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 0.0F, 0.0F, 0.9001F, 0.445F, -0.8555F));
+
+		ModelPartData leg3 = leg.addChild("leg3", ModelPartBuilder.create(), ModelTransform.pivot(0.1635F, -0.4273F, 4.0F));
+
+		ModelPartData leg_r2 = leg3.addChild("leg_r2", ModelPartBuilder.create().uv(20, 30).cuboid(-1.5F, -1.5F, -5.0F, 8.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, -1.3526F));
 
 		ModelPartData legtwo = root.addChild("legtwo", ModelPartBuilder.create(), ModelTransform.of(-3.0F, -0.5F, -6.5F, 0.6601F, 0.0974F, -0.3873F));
 
-		ModelPartData legtwo_r1 = legtwo.addChild("legtwo_r1", ModelPartBuilder.create().uv(0, 29).cuboid(-6.5F, -1.5F, -5.0F, 8.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-0.1635F, -0.4273F, 4.0F, 0.0F, 0.0F, 1.3526F));
+		ModelPartData legtwo2 = legtwo.addChild("legtwo2", ModelPartBuilder.create(), ModelTransform.pivot(-1.2986F, -7.8578F, 0.0F));
 
-		ModelPartData legtwo_r2 = legtwo.addChild("legtwo_r2", ModelPartBuilder.create().uv(69, 11).cuboid(-0.35F, -0.5F, -9.75F, 1.0F, 1.0F, 4.0F, new Dilation(0.0F))
+		ModelPartData legtwo_r1 = legtwo2.addChild("legtwo_r1", ModelPartBuilder.create().uv(69, 11).cuboid(-0.35F, -0.5F, -9.75F, 1.0F, 1.0F, 4.0F, new Dilation(0.0F))
 		.uv(44, 45).cuboid(-0.85F, -1.0F, -5.75F, 2.0F, 2.0F, 4.0F, new Dilation(0.0F))
-		.uv(14, 34).cuboid(-1.35F, -1.5F, -1.75F, 3.0F, 3.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(-1.2986F, -7.8578F, 0.0F, 0.9001F, -0.445F, 0.8555F));
+		.uv(14, 34).cuboid(-1.35F, -1.5F, -1.75F, 3.0F, 3.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 0.0F, 0.0F, 0.9001F, -0.445F, 0.8555F));
+
+		ModelPartData legtwo3 = legtwo.addChild("legtwo3", ModelPartBuilder.create(), ModelTransform.pivot(-0.1635F, -0.4273F, 4.0F));
+
+		ModelPartData legtwo_r2 = legtwo3.addChild("legtwo_r2", ModelPartBuilder.create().uv(0, 29).cuboid(-6.5F, -1.5F, -5.0F, 8.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.3526F));
 
 		ModelPartData legthree = root.addChild("legthree", ModelPartBuilder.create(), ModelTransform.of(-0.0674F, -0.7136F, -0.5F, -2.1841F, 0.5901F, -2.6394F));
 
-		ModelPartData legthree_r1 = legthree.addChild("legthree_r1", ModelPartBuilder.create().uv(22, 26).cuboid(-6.5F, -1.5F, -5.0F, 8.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-0.7303F, -0.9691F, 3.9427F, 0.0F, 0.0F, 1.3526F));
+		ModelPartData legthree2 = legthree.addChild("legthree2", ModelPartBuilder.create(), ModelTransform.pivot(-1.8654F, -8.3996F, -0.0573F));
 
-		ModelPartData legthree_r2 = legthree.addChild("legthree_r2", ModelPartBuilder.create().uv(79, 53).cuboid(-0.35F, -0.5F, -10.75F, 1.0F, 1.0F, 5.0F, new Dilation(0.0F))
+		ModelPartData legthree_r1 = legthree2.addChild("legthree_r1", ModelPartBuilder.create().uv(79, 53).cuboid(-0.35F, -0.5F, -10.75F, 1.0F, 1.0F, 5.0F, new Dilation(0.0F))
 		.uv(32, 45).cuboid(-0.85F, -1.0F, -5.75F, 2.0F, 2.0F, 4.0F, new Dilation(0.0F))
-		.uv(0, 33).cuboid(-1.35F, -1.5F, -1.75F, 3.0F, 3.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(-1.8654F, -8.3996F, -0.0573F, 0.9001F, -0.445F, 0.8555F));
+		.uv(0, 33).cuboid(-1.35F, -1.5F, -1.75F, 3.0F, 3.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 0.0F, 0.0F, 0.9001F, -0.445F, 0.8555F));
+
+		ModelPartData legthree3 = legthree.addChild("legthree3", ModelPartBuilder.create(), ModelTransform.pivot(-0.7303F, -0.9691F, 3.9427F));
+
+		ModelPartData legthree_r2 = legthree3.addChild("legthree_r2", ModelPartBuilder.create().uv(22, 26).cuboid(-6.5F, -1.5F, -5.0F, 8.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.3526F));
 
 		ModelPartData body = root.addChild("body", ModelPartBuilder.create().uv(0, 16).cuboid(-4.0F, 0.5739F, -4.0216F, 8.0F, 1.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(-0.1635F, -0.5013F, -3.4784F));
 
@@ -180,10 +226,32 @@ public class DistortedScoutEntityModel extends EntityModel<DistortedScoutEntity>
 		return TexturedModelData.of(modelData, 128, 128);
 	}
 	@Override
-	public void setAngles(DistortedScoutEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setAngles(DistortedScoutEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch)
+	{
+//		// 重置所有部件的内部动画变换 — 否则 AnimationHelper.animate 会累加，腿越跑越远
+//		this.getPart().traverse().forEach(ModelPart::resetTransform);
+//
+//		// === 关键帧动画：走路 ===
+//		AnimationHelper.animate(this, step, entity.getStepAnimationTime(), 1.0F,
+//				new org.joml.Vector3f());
+//
+//		// === 头部跟踪 ===
+//		this.head.yaw = netHeadYaw * 0.017453292F;
+//		this.head.pitch = headPitch * 0.017453292F;
+//
+//		// === 身体浮动 ===
+//		this.body.pivotY = (float) Math.sin(ageInTicks * 0.1F) * 0.5F;
+//		this.body.pivotY = (float) Math.sin(ageInTicks * 0.1F) * 0.5F;
 	}
+//	@Override
+//	public ModelPart getPart() {
+//		// SinglePartEntityModel 要求返回根部件，动画系统从这里遍历查找 bone
+//		return this.root;
+//	}
+
 	@Override
 	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
 		root.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
 	}
+
 }

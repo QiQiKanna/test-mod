@@ -1,7 +1,6 @@
 package com.qiqikanna.test;
 
 import com.qiqikanna.test.block.ModBlocks;
-import com.qiqikanna.test.entity.ModEntityAttributesRegistry;
 import com.qiqikanna.test.entity.ModEntityTypes;
 import com.qiqikanna.test.item.ModItemGroups;
 import com.qiqikanna.test.item.ModItems;
@@ -30,8 +29,7 @@ public class TestMod implements ModInitializer {
 		ModItems.registerItems();
 		ModItemGroups.registerGroups();
 		ModBlocks.registerBlocks();
-		ModEntityTypes.registerEntityType();
-		ModEntityAttributesRegistry.register();
+		ModEntityTypes.register();
 		ModSoundEvents.registerSoundEvents();
 		ModTrades.registerTrades();
 		ModVillagers.registerVillagers();

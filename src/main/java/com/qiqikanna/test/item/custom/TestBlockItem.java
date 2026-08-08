@@ -1,6 +1,6 @@
 package com.qiqikanna.test.item.custom;
 
-import com.qiqikanna.test.entity.custom.projectile.thrown.TestEntity;
+import com.qiqikanna.test.entity.custom.projectile.thrown.TestBlockEntity;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
@@ -32,10 +32,10 @@ public class TestBlockItem extends BlockItem
                 0.5F, 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
         );
         if (!world.isClient) {
-            TestEntity testEntity = new TestEntity(world, user);
-            testEntity.setItem(itemStack);
-            testEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);
-            world.spawnEntity(testEntity);
+            TestBlockEntity testBlockEntity = new TestBlockEntity(world, user);
+            testBlockEntity.setItem(itemStack);
+            testBlockEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);
+            world.spawnEntity(testBlockEntity);
         }
 
         user.incrementStat(Stats.USED.getOrCreateStat(this));

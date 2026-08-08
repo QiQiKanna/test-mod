@@ -1,4 +1,4 @@
-package com.qiqikanna.test.block;
+package com.qiqikanna.test.block.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

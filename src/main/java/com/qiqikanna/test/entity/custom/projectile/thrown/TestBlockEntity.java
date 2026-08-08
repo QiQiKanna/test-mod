@@ -1,5 +1,6 @@
 package com.qiqikanna.test.entity.custom.projectile.thrown;
 
+import com.qiqikanna.test.entity.ModEntityTypes;
 import com.qiqikanna.test.item.ModItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -10,23 +11,15 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.ExplosionBehavior;
 
-public class TestEntity extends ThrownItemEntity
+public class TestBlockEntity extends ThrownItemEntity
 {
-    public TestEntity(World world, LivingEntity owner) {
-        //super(ModEntityType.TEST_ENTITY, owner, world);
-        super(EntityType.ENDER_PEARL, owner, world);
+    public TestBlockEntity(World world, LivingEntity owner) {
+        super(ModEntityTypes.TEST_BLOCK_ENTITY, owner, world);
     }
 
-    public TestEntity(EntityType<? extends TestEntity> entityType, World world)
+    public TestBlockEntity(EntityType<? extends TestBlockEntity> entityType, World world)
     {
         super(entityType,world);
-    }
-
-
-    @Override
-    protected Item getDefaultItem()
-    {
-        return ModItems.TEST_BLOCK;
     }
 
 
@@ -58,5 +51,11 @@ public class TestEntity extends ThrownItemEntity
             }
             this.discard();
         }
+    }
+
+    @Override
+    protected Item getDefaultItem()
+    {
+        return ModItems.TEST_BLOCK;
     }
 }

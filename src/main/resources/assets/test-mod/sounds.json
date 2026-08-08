@@ -6,19 +6,19 @@
     ]
   },
   "block.ice_ether.break": {
-    "subtitle": "sounds.test-mod.block_ice_ether_break",
+    "subtitle": "subtitles.block.generic.break",
     "sounds": [
       "test-mod:block_ice_ether_break"
     ]
   },
   "block.ice_ether.place": {
-    "subtitle": "sounds.test-mod.block_ice_ether_place",
+    "subtitle": "subtitles.block.generic.place",
     "sounds": [
       "test-mod:block_ice_ether_place"
     ]
   },
   "block.ice_ether.step": {
-    "subtitle": "sounds.test-mod.block_ice_ether_step",
+    "subtitle": "subtitles.block.generic.footsteps",
     "sounds": [
       "test-mod:block_ice_ether_step"
     ]
@@ -30,7 +30,7 @@
     ]
   },
   "block.ice_ether.hit": {
-    "subtitle": "sounds.test-mod.block_ice_ether_hit",
+    "subtitle": "subtitles.block.generic.hit",
     "sounds": [
       "test-mod:block_ice_ether_hit"
     ]

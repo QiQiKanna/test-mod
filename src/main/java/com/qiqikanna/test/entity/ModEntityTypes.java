@@ -3,45 +3,54 @@ package com.qiqikanna.test.entity;
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.entity.custom.CubeEntity;
 import com.qiqikanna.test.entity.custom.DistortedScoutEntity;
-import com.qiqikanna.test.entity.custom.projectile.thrown.TestEntity;
+import com.qiqikanna.test.entity.custom.projectile.thrown.TestBlockEntity;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityDimensions;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.*;
+import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModEntityTypes
 {
-    public static final EntityType<TestEntity> TEST_ENTITY = register("test_entity",
-            EntityType.Builder.<TestEntity>create(TestEntity::new, SpawnGroup.MISC)
-                    .setDimensions(0.25F, 0.25F)
-                    .maxTrackingRange(4)
-                    .trackingTickInterval(10)
+    public static final EntityType<TestBlockEntity> TEST_BLOCK_ENTITY = register("test_entity",
+            FabricEntityTypeBuilder.<TestBlockEntity>create(SpawnGroup.MISC, TestBlockEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
+                    .trackRangeChunks(4)
+                    .trackedUpdateRate(10)
+                    .build()
     );
     public static final EntityType<CubeEntity> CUBE_ENTITY = register("cube_entity",
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE,CubeEntity::new)
                     .dimensions(EntityDimensions.fixed(0.75F,0.75F))
-                    .build());
+                    .build(),
+            CubeEntity.createMobAttributes());
     public static final EntityType<DistortedScoutEntity> DISTORTED_SCOUT = register("distorted_scout",
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE,DistortedScoutEntity::new)
                     .dimensions(EntityDimensions.fixed(1.0F,1.0F))
-                    .build());
+                    .build(),
+            DistortedScoutEntity.createMobAttributes());
 
 
-    private static <T extends Entity> EntityType<T> register(String id, EntityType.Builder<T> type) {
-        return Registry.register(Registries.ENTITY_TYPE, new Identifier(TestMod.MOD_ID,id), type.build(id));
+
+    // ① 非 LivingEntity
+    private static <T extends Entity> EntityType<T> register(String id, EntityType<T> entityType) {
+        return Registry.register(Registries.ENTITY_TYPE, new Identifier(TestMod.MOD_ID, id), entityType);
     }
 
-    //fabric提供的这个builder是拓展版本
-    private static <T extends Entity> EntityType<T> register(String id,EntityType<T> entityType)
+    // ② LivingEntity + 属性一起注册
+    private static <T extends LivingEntity> EntityType<T> register(String id, EntityType<T> entityType, DefaultAttributeContainer.Builder builder) {
+        EntityType<T> type = Registry.register(Registries.ENTITY_TYPE, new Identifier(TestMod.MOD_ID, id), entityType);
+        FabricDefaultAttributeRegistry.register(type, builder);
+        return type;
+    }
+
+    /**
+     * 触发类加载，使所有实体类型及属性在静态初始化阶段完成注册。
+     * 必须在初始化时调用。
+     */
+    public static void register()
     {
-        return Registry.register(Registries.ENTITY_TYPE, new Identifier(TestMod.MOD_ID,id), entityType);
-    }
-
-    public static void registerEntityType(){
-
     }
 }

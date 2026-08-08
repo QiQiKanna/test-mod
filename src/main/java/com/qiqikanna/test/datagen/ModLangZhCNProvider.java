@@ -20,7 +20,7 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
     {
         translationBuilder.add(ModItems.ICE_ETHER,"冰以太");
         translationBuilder.add(ModItems.SHIT,"谢特");
-        translationBuilder.add(ModItems.MY_SWORD,"随手画的剑");
+
         translationBuilder.add(ModItems.CORN,"玉米");
         translationBuilder.add(ModItems.BLUEBARRY,"蓝莓");
         translationBuilder.add(ModItems.STRAWBERRY,"草莓");
@@ -29,6 +29,8 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
         translationBuilder.add(ModItems.FIRE_ETHER,"火以太");
 
         translationBuilder.add(ModItems.BIG_HAMMER,"雷霆宇宙大战锤");
+        translationBuilder.add(ModItems.MY_SWORD,"随手画的剑");
+        translationBuilder.add(ModItems.BASEBALL_BAT,"Baseball Bat");
         translationBuilder.add(ModItems.FIRE_ETHER_SWORD,"火以太剑");
         translationBuilder.add(ModItems.FIRE_ETHER_SHOVEL,"火以太锹");
         translationBuilder.add(ModItems.FIRE_ETHER_PICKAXE,"火以太镐");
@@ -54,6 +56,9 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
         translationBuilder.add(ModBlocks.ICE_ETHER_BLOCK,"冰以太块");
         translationBuilder.add(ModBlocks.TEST_BLOCK,"测试方块");
         translationBuilder.add(ModBlocks.CHANDELIER,"吊灯");
+        translationBuilder.add(ModBlocks.ORANGE_NIGHTSTAND,"Orange Nightstand");
+        translationBuilder.add(ModBlocks.ORANGE_CLOCK ,"Orange Clock");
+        translationBuilder.add(ModBlocks.SOFA,"沙发");
         translationBuilder.add(ModBlocks.ICE_ETHER_STAIRS,"冰以太楼梯");
         translationBuilder.add(ModBlocks.ICE_ETHER_SLAB,"冰以太台阶");
         translationBuilder.add(ModBlocks.ICE_ETHER_BUTTON,"冰以太按钮");

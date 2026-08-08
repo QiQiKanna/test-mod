@@ -4,6 +4,7 @@ import com.google.common.collect.Sets;
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.entity.model.CubeEntityModel;
 import com.qiqikanna.test.entity.model.DistortedScoutEntityModel;
+import com.qiqikanna.test.entity.model.TestBlockEntityModel;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
@@ -19,24 +20,20 @@ public class ModEntityModelLayers
     private static final String MAIN = "main";
     private static final Set<EntityModelLayer> LAYERS = Sets.<EntityModelLayer>newHashSet();
 
-    public static final EntityModelLayer CUBE = registerMain("cube");
-    public static final EntityModelLayer DISTORTED_SCOUT = registerMain("distorted_scout");
+    public static final EntityModelLayer CUBE = registerMain("cube", CubeEntityModel::getTexturedModelData);
+    public static final EntityModelLayer DISTORTED_SCOUT = registerMain("distorted_scout", DistortedScoutEntityModel::getTexturedModelData);
+    public static final EntityModelLayer TEST_BLOCK_ENTITY = registerMain("test_block_entity", TestBlockEntityModel::getTexturedModelData);
 
-    public static void register()
-    {
-        // 注册模型层 — 必须在注册渲染器之前！
-        EntityModelLayerRegistry.registerModelLayer(CUBE, CubeEntityModel::getTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(DISTORTED_SCOUT, DistortedScoutEntityModel::getTexturedModelData);
-    }
 
-    private static EntityModelLayer registerMain(String id) {
-        return register(id, MAIN);
+    private static EntityModelLayer registerMain(String id, EntityModelLayerRegistry.TexturedModelDataProvider provider) {
+        return register(id, MAIN,provider);
     }
-    private static EntityModelLayer register(String id, String layer) {
+    private static EntityModelLayer register(String id, String layer, EntityModelLayerRegistry.TexturedModelDataProvider provider) {
         EntityModelLayer entityModelLayer = create(id, layer);
         if (!LAYERS.add(entityModelLayer)) {
             throw new IllegalStateException("Duplicate registration for " + entityModelLayer);
         } else {
+            EntityModelLayerRegistry.registerModelLayer(entityModelLayer, provider);
             return entityModelLayer;
         }
     }
@@ -45,5 +42,9 @@ public class ModEntityModelLayers
     }
     public static Stream<EntityModelLayer> getLayers() {
         return LAYERS.stream();
+    }
+
+    public static void register()
+    {
     }
 }

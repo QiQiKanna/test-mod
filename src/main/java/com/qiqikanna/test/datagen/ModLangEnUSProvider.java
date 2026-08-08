@@ -20,6 +20,7 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
     {
         translationBuilder.add(ModItems.ICE_ETHER,"Ice Ether");
         translationBuilder.add(ModItems.SHIT,"Shit");
+
         translationBuilder.add(ModItems.CORN,"Corn");
         translationBuilder.add(ModItems.BLUEBARRY,"Bluebarry");
         translationBuilder.add(ModItems.STRAWBERRY,"Strawberry");
@@ -30,6 +31,7 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
 
         translationBuilder.add(ModItems.BIG_HAMMER,"Big Hammer");
         translationBuilder.add(ModItems.MY_SWORD,"My Sword");
+        translationBuilder.add(ModItems.BASEBALL_BAT,"Baseball Bat");
         translationBuilder.add(ModItems.FIRE_ETHER_SWORD,"Fire Ether Sword");
         translationBuilder.add(ModItems.FIRE_ETHER_SHOVEL,"Fire Ether Shovel");
         translationBuilder.add(ModItems.FIRE_ETHER_PICKAXE,"Fire Ether Pickaxe");
@@ -59,6 +61,9 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add(ModBlocks.ICE_ETHER_BLOCK,"Ice Ether Block");
         translationBuilder.add(ModBlocks.TEST_BLOCK,"Test Block");
         translationBuilder.add(ModBlocks.CHANDELIER,"Chandelier");
+        translationBuilder.add(ModBlocks.ORANGE_NIGHTSTAND,"Orange Nightstand");
+        translationBuilder.add(ModBlocks.ORANGE_CLOCK ,"Orange Clock");
+        translationBuilder.add(ModBlocks.SOFA,"Sofa");
         translationBuilder.add(ModBlocks.ICE_ETHER_STAIRS,"Ice Ether Stairs");
         translationBuilder.add(ModBlocks.ICE_ETHER_SLAB,"Ice Ether Slab");
         translationBuilder.add(ModBlocks.ICE_ETHER_BUTTON,"Ice Ether Button");
@@ -81,12 +86,7 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add(ModEntityTypes.CUBE_ENTITY,"Cube Entity");
 
         //声音事件subtitle
-        translationBuilder.add("sounds.test-mod.item_pickaxe_axe_use","Pickaxe Axe: Use on Block");
-        translationBuilder.add("sounds.test-mod.block_ice_ether_break","Ice Ether Block: Break");
-        translationBuilder.add("sounds.test-mod.block_ice_ether_place","Ice Ether Block: Place");
-        translationBuilder.add("sounds.test-mod.block_ice_ether_step","Step on the Ice Ether Block");
         translationBuilder.add("sounds.test-mod.block_ice_ether_fall","Fall on the Ice Ether Block");
-        translationBuilder.add("sounds.test-mod.block_ice_ether_hit","Hit Ice Ether Block");
 
         translationBuilder.add("entity.minecraft.villager.ice_ether_master","Ice Ether Master");
 

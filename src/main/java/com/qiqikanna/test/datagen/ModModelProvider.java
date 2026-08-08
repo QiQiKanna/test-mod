@@ -4,6 +4,7 @@ import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.block.ModBlockFamilies;
 import com.qiqikanna.test.block.ModBlocks;
 import com.qiqikanna.test.block.custom.CornCropBlock;
+import com.qiqikanna.test.block.custom.SofaBlock;
 import com.qiqikanna.test.block.custom.StrawberryCropBlock;
 import com.qiqikanna.test.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -14,7 +15,9 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 
+import java.util.Map;
 import java.util.Optional;
 
 public class ModModelProvider extends FabricModelProvider
@@ -69,6 +72,13 @@ public class ModModelProvider extends FabricModelProvider
             ));
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.HEMOSTONE_STAIRS,hemostone_stairsModelId);
 
+        blockStateModelGenerator.registerSimpleState(ModBlocks.CHANDELIER);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.TEST_BLOCK);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.ORANGE_NIGHTSTAND);
+
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.ORANGE_CLOCK);
+
+        registerSofaBlockState(blockStateModelGenerator);
 
 
         ModBlockFamilies.getFamilies()
@@ -117,5 +127,31 @@ public class ModModelProvider extends FabricModelProvider
                         TextureMap.layer0(new Identifier("item/spawn_egg")),
                         itemModelGenerator.writer
                 );
+    }
+
+    public void registerSofaBlockState(BlockStateModelGenerator blockStateModelGenerator)
+    {
+        Map<SofaBlock.Type,Identifier> types = Map.of(
+                SofaBlock.Type.SINGLE,new Identifier(TestMod.MOD_ID,"block/sofa"),
+                SofaBlock.Type.LEFT,new Identifier(TestMod.MOD_ID,"block/sofa_left"),
+                SofaBlock.Type.RIGHT,new Identifier(TestMod.MOD_ID,"block/sofa_right"),
+                SofaBlock.Type.MIDDLE,new Identifier(TestMod.MOD_ID,"block/sofa_middle")
+        );
+        Map<Direction,VariantSettings.Rotation> rotations = Map.of(
+                Direction.NORTH, VariantSettings.Rotation.R0,
+                Direction.EAST, VariantSettings.Rotation.R90,
+                Direction.SOUTH, VariantSettings.Rotation.R180,
+                Direction.WEST, VariantSettings.Rotation.R270
+        );
+
+        blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(ModBlocks.SOFA).coordinate(
+                        BlockStateVariantMap.create(SofaBlock.FACING, SofaBlock.TYPE).register(
+                                (direction, type) -> BlockStateVariant.create()
+                                        .put(VariantSettings.MODEL, types.get(type))
+                                        .put(VariantSettings.Y, rotations.get(direction))
+                                )
+                )
+        );
     }
 }
