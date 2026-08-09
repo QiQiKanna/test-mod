@@ -1,7 +1,9 @@
 package com.qiqikanna.test.entity;
 
 import com.qiqikanna.test.TestMod;
+import com.qiqikanna.test.entity.custom.AvnFoxEntity;
 import com.qiqikanna.test.entity.custom.CubeEntity;
+import com.qiqikanna.test.entity.custom.DarakuCleanEntity;
 import com.qiqikanna.test.entity.custom.DistortedScoutEntity;
 import com.qiqikanna.test.entity.custom.projectile.thrown.TestBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -31,7 +33,16 @@ public class ModEntityTypes
                     .dimensions(EntityDimensions.fixed(1.0F,1.0F))
                     .build(),
             DistortedScoutEntity.createMobAttributes());
-
+    public static final EntityType<DarakuCleanEntity> DARAKU_CLEAN = register("daraku_clean",
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE,DarakuCleanEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.6F,1.7F))
+                    .build(),
+            DarakuCleanEntity.createMobAttributes());
+    public static final EntityType<AvnFoxEntity> AVN_FOX = register("avn_fox",
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE,AvnFoxEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.6F,1.8F))
+                    .build(),
+                    AvnFoxEntity.createMobAttributes());
 
 
     // ① 非 LivingEntity
