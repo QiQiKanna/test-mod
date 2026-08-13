@@ -1123,7 +1123,6 @@
 			}
 		},
 		"extra1": {
-			"loop": "hold_on_last_frame",
 			"animation_length": 1.5,
 			"bones": {
 				"goggles": {
@@ -1179,6 +1178,39 @@
 						},
 						"0.7083": {
 							"vector": [-92.5, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"extra2": {
+			"animation_length": 0.5417,
+			"bones": {
+				"goggles": {
+					"scale": {
+						"vector": [1, 1, 1]
+					}
+				},
+				"RightArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, 0, 60]
+						},
+						"0.3333": {
+							"vector": [-55, 0, 60]
+						}
+					}
+				},
+				"RightForeArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [-80, 0, 0]
 						}
 					}
 				}

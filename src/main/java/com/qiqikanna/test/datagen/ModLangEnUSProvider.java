@@ -64,6 +64,10 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add(ModBlocks.ORANGE_NIGHTSTAND,"Orange Nightstand");
         translationBuilder.add(ModBlocks.ORANGE_CLOCK ,"Orange Clock");
         translationBuilder.add(ModBlocks.SOFA,"Sofa");
+        translationBuilder.add(ModBlocks.LAMP_BLOCK,"Lamp Block");
+        translationBuilder.add(ModBlocks.MY_BAD,"My Bed");
+        translationBuilder.add(ModBlocks.MY_PILLAR,"My Pillar");
+        translationBuilder.add(ModBlocks.MY_FENCE,"My Fence");
         translationBuilder.add(ModBlocks.ICE_ETHER_STAIRS,"Ice Ether Stairs");
         translationBuilder.add(ModBlocks.ICE_ETHER_SLAB,"Ice Ether Slab");
         translationBuilder.add(ModBlocks.ICE_ETHER_BUTTON,"Ice Ether Button");

@@ -76,6 +76,10 @@ public class ModItems
     public static final Item ORANGE_NIGHTSTAND = register(ModBlocks.ORANGE_NIGHTSTAND);
     public static final Item ORANGE_CLOCK = register(ModBlocks.ORANGE_CLOCK);
     public static final Item SOFA = register(ModBlocks.SOFA);
+    public static final Item LAMP_BLOCK = register(ModBlocks.LAMP_BLOCK);
+    public static final Item MY_BED = register(ModBlocks.MY_BAD);
+    public static final Item MY_PILLAR = register(ModBlocks.MY_PILLAR);
+    public static final Item MY_FENCE = register(ModBlocks.MY_FENCE);
 
     public static final Item ICE_ETHER_STAIRS = register(ModBlocks.ICE_ETHER_STAIRS);
     public static final Item ICE_ETHER_SLAB = register(ModBlocks.ICE_ETHER_SLAB);

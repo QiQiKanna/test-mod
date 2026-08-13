@@ -1,10 +1,7 @@
 package com.qiqikanna.test.entity;
 
 import com.qiqikanna.test.TestMod;
-import com.qiqikanna.test.entity.custom.AvnFoxEntity;
-import com.qiqikanna.test.entity.custom.CubeEntity;
-import com.qiqikanna.test.entity.custom.DarakuCleanEntity;
-import com.qiqikanna.test.entity.custom.DistortedScoutEntity;
+import com.qiqikanna.test.entity.custom.*;
 import com.qiqikanna.test.entity.custom.projectile.thrown.TestBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -43,6 +40,8 @@ public class ModEntityTypes
                     .dimensions(EntityDimensions.fixed(0.6F,1.8F))
                     .build(),
                     AvnFoxEntity.createMobAttributes());
+    public static final EntityType<SeatEntity> SEATS = register("seats",
+            FabricEntityTypeBuilder.create(SpawnGroup.MISC,SeatEntity::new).build());
 
 
     // ① 非 LivingEntity

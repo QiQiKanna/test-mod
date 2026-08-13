@@ -20,6 +20,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 public class AvnFoxEntity extends PathAwareEntity implements GeoEntity
 {
     public static final RawAnimation EXTRA1 = RawAnimation.begin().thenPlay("extra1");
+    private static final RawAnimation EXTRA2 = RawAnimation.begin().thenPlay("extra2");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
     public Boolean gogglesOpen = true;
@@ -39,10 +40,17 @@ public class AvnFoxEntity extends PathAwareEntity implements GeoEntity
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers)
     {
-        controllers.add(new AnimationController<>(this,"walk",state ->
-                state.isMoving() ? state.setAndContinue(DefaultAnimations.WALK) : PlayState.STOP));
-        controllers.add(new AnimationController<>(this,"extra1",state -> PlayState.STOP)
-                .triggerableAnim("extra1",EXTRA1));
+        controllers.add(
+                new AnimationController<>(this,"walk",
+                        state ->
+                        state.isMoving() ? state.setAndContinue(DefaultAnimations.WALK) : PlayState.STOP),
+                new AnimationController<>(this,"extra1",
+                        state -> PlayState.STOP)
+                        .triggerableAnim("extra1",EXTRA1),
+                new AnimationController<>(this,"extra2",
+                        state -> PlayState.STOP)
+                        .triggerableAnim("extra2",EXTRA2)
+        );
     }
 
     @Override
@@ -52,14 +60,22 @@ public class AvnFoxEntity extends PathAwareEntity implements GeoEntity
     }
 
     @Override
-    protected ActionResult interactMob(PlayerEntity player, Hand hand)
+    public ActionResult interactMob(PlayerEntity player, Hand hand)
     {
-        triggerAnim("extra1","extra1");
         if (!this.getWorld().isClient)
         {
+            if (this.isGogglesOpen())
+            {
+                triggerAnim("extra1","extra1");
+            }
+            else
+            {
+                triggerAnim("extra2","extra2");
+            }
+
             setGogglesOpen(!isGogglesOpen());
         }
-        return super.interactMob(player, hand);
+        return ActionResult.SUCCESS;
     }
 
     public Boolean isGogglesOpen(){return this.gogglesOpen;}

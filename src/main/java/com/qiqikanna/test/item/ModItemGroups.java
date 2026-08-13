@@ -79,6 +79,10 @@ public class ModItemGroups
                             entries.add(ModItems.ORANGE_NIGHTSTAND);
                             entries.add(ModItems.ORANGE_CLOCK);
                             entries.add(ModItems.SOFA);
+                            entries.add(ModItems.LAMP_BLOCK);
+                            entries.add(ModItems.MY_BED);
+                            entries.add(ModItems.MY_PILLAR);
+                            entries.add(ModItems.MY_FENCE);
 
                             entries.add(ModItems.ICE_ETHER_STAIRS);
                             entries.add(ModItems.ICE_ETHER_SLAB);

@@ -8,6 +8,7 @@ import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks
@@ -39,13 +40,16 @@ public class ModBlocks
                     .luminance(state ->15)));
     public static final Block ORANGE_CLOCK = register("orange_clock",new OrangeClock(AbstractBlock.Settings.copy(Blocks.STONE)));
     public static final Block SOFA = register("sofa",new SofaBlock(AbstractBlock.Settings.create().nonOpaque()));
-
+    public static final Block LAMP_BLOCK = register("lamp_block",new LampBlock(AbstractBlock.Settings.create().nonOpaque()));
     // ⚠️ 警示：不要对普通Block使用 .copy(Blocks.OAK_LOG) 等带有方向属性的方块（PillarBlock/StairsBlock/SlabBlock等）
     //    它们内部有 axis/facing/half 等属性，Java 21+ 类加载时序不同，可能导致 "Cannot get property ... as it does not exist in Block{minecraft:air}" 崩溃
     //    ✅ 正确做法：用 .create() 手动设置属性，或 .copy() 纯色方块（如 OAK_PLANKS、STONE、DIRT、IRON_BLOCK 等普通方块）
     public static final Block ORANGE_NIGHTSTAND = register("orange_nightstand",
-            new Block(AbstractBlock.Settings.create()
-                    .nonOpaque()));
+            new Block(AbstractBlock.Settings.create().nonOpaque()));
+    public static final Block MY_BAD = register("my_bed",
+            new ModBedBlock(DyeColor.BLACK,AbstractBlock.Settings.create().nonOpaque()));
+    public static final Block MY_PILLAR = register("my_pillar",new ModPillarBlock(AbstractBlock.Settings.create().nonOpaque()));
+    public static final Block MY_FENCE = register("my_fence",new ModFenceBlock(AbstractBlock.Settings.create().nonOpaque()));
 
     public static final Block ICE_ETHER_STAIRS = register("ice_ether_stairs",
             new StairsBlock(ICE_ETHER_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(ICE_ETHER_BLOCK)));

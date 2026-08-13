@@ -59,6 +59,10 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
         translationBuilder.add(ModBlocks.ORANGE_NIGHTSTAND,"Orange Nightstand");
         translationBuilder.add(ModBlocks.ORANGE_CLOCK ,"Orange Clock");
         translationBuilder.add(ModBlocks.SOFA,"沙发");
+        translationBuilder.add(ModBlocks.LAMP_BLOCK,"粥灯");
+        translationBuilder.add(ModBlocks.MY_BAD,"My Bed");
+        translationBuilder.add(ModBlocks.MY_PILLAR,"My Pillar");
+        translationBuilder.add(ModBlocks.MY_FENCE,"My Fence");
         translationBuilder.add(ModBlocks.ICE_ETHER_STAIRS,"冰以太楼梯");
         translationBuilder.add(ModBlocks.ICE_ETHER_SLAB,"冰以太台阶");
         translationBuilder.add(ModBlocks.ICE_ETHER_BUTTON,"冰以太按钮");

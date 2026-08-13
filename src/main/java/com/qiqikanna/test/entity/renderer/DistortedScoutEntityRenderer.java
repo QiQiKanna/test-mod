@@ -66,4 +66,5 @@ public class DistortedScoutEntityRenderer extends MobEntityRenderer<DistortedSco
         //    但它也会用不透明 RenderLayer 渲染一遍模型，如果你看到双重渲染就把下面注释掉：
         //super.render(mobEntity, yaw, tickDelta, matrixStack, vertexConsumerProvider, light);
     }
+
 }

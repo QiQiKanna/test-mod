@@ -15,5 +15,6 @@ public class ModEntityRenderers
         EntityRendererRegistry.register(ModEntityTypes.TEST_BLOCK_ENTITY, TestBLockEntityRenderer::new);
         EntityRendererRegistry.register(ModEntityTypes.DARAKU_CLEAN, DarakuCleanEntityRenderer::new);
         EntityRendererRegistry.register(ModEntityTypes.AVN_FOX, AvnFoxEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntityTypes.SEATS,SeatEntityRenderer::new);
     }
 }

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "my_pillar_block_type=single": {
+      "model": "test-mod:block/my_pillar"
+    },
+    "my_pillar_block_type=top": {
+      "model": "test-mod:block/my_pillar_top"
+    },
+    "my_pillar_block_type=bottom": {
+      "model": "test-mod:block/my_pillar_bottom"
+    },
+    "my_pillar_block_type=middle": {
+      "model": "test-mod:block/my_pillar_middle"
+    }
+  }
+}

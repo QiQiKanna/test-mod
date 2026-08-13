@@ -9,10 +9,12 @@ import com.qiqikanna.test.block.custom.StrawberryCropBlock;
 import com.qiqikanna.test.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Block;
 import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
@@ -77,9 +79,17 @@ public class ModModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerSimpleState(ModBlocks.ORANGE_NIGHTSTAND);
 
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.ORANGE_CLOCK);
-
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.MY_BAD);
         registerSofaBlockState(blockStateModelGenerator);
+        registerNorthDefaultRotationState(ModBlocks.LAMP_BLOCK, blockStateModelGenerator);
 
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.MY_PILLAR,ModelIds.getBlockModelId(ModBlocks.MY_PILLAR));
+
+        blockStateModelGenerator.blockStateCollector.accept(
+                createFenceBlockState(ModBlocks.MY_FENCE,
+                        new Identifier(TestMod.MOD_ID,"block/my_fence_post"),
+                        new Identifier(TestMod.MOD_ID,"block/my_fence_side"))
+        );
 
         ModBlockFamilies.getFamilies()
                 .filter(BlockFamily::shouldGenerateModels)
@@ -153,5 +163,58 @@ public class ModModelProvider extends FabricModelProvider
                                 )
                 )
         );
+    }
+
+    public void registerNorthDefaultRotationState(Block block, BlockStateModelGenerator blockStateModelGenerator)
+    {
+        Identifier modelPath = Registries.BLOCK.getId(block).withPrefixedPath("block/");
+
+        Map<Direction, VariantSettings.Rotation> horizontalRotations = Map.of(
+                Direction.NORTH, VariantSettings.Rotation.R0,
+                Direction.EAST, VariantSettings.Rotation.R90,
+                Direction.SOUTH, VariantSettings.Rotation.R180,
+                Direction.WEST, VariantSettings.Rotation.R270
+        );
+
+        blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(block).coordinate(
+                        BlockStateVariantMap.create(Properties.FACING)
+                                .register(dir ->
+                                {
+                                    BlockStateVariant variant = BlockStateVariant.create()
+                                            .put(VariantSettings.MODEL, modelPath);
+                                    if (dir.getAxis().isHorizontal())
+                                    {
+                                        variant.put(VariantSettings.Y, horizontalRotations.get(dir));
+                                    }
+                                    else if (dir == Direction.UP)
+                                    {
+                                        variant.put(VariantSettings.X, VariantSettings.Rotation.R270);
+                                    }
+                                    else
+                                    {
+                                        variant.put(VariantSettings.X, VariantSettings.Rotation.R90);
+                                    }
+                                    return variant;
+                                })
+                )
+        );
+    }
+
+    public BlockStateSupplier createFenceBlockState(Block fenceBlock, Identifier postModelId, Identifier sideModelId) {
+        return MultipartBlockStateSupplier.create(fenceBlock)
+                .with(BlockStateVariant.create().put(VariantSettings.MODEL, postModelId))
+                .with(When.create().set(Properties.NORTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId))
+                .with(
+                        When.create().set(Properties.EAST, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                .with(
+                        When.create().set(Properties.SOUTH, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.Y, VariantSettings.Rotation.R180)
+                )
+                .with(
+                        When.create().set(Properties.WEST, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.Y, VariantSettings.Rotation.R270)
+                );
     }
 }
