@@ -1,9 +1,13 @@
 package com.qiqikanna.test.block;
 
+import com.qiqikanna.test.fluid.ModFluids;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
+import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
 public class ModBlockRenderLayers
@@ -18,5 +22,13 @@ public class ModBlockRenderLayers
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORN_CROP,RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LUMEN_BERRY_BUSH,RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TEST_BLOCK,RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),ModFluids.OIL,ModFluids.FLOWING_OIL);
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.OIL,ModFluids.FLOWING_OIL,
+                new SimpleFluidRenderHandler(
+                        new Identifier("minecraft:block/water_still"),
+                        new Identifier("minecraft:block/water_still"),
+                        0x42413B
+                ));
     }
 }

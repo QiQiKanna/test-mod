@@ -36,5 +36,19 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.MUSIC_DISC_BLIZZARD)
                 .add(ModItems.MUSIC_DISC_HEMOPHILIA)
                 .add(ModItems.MUSIC_DISC_SEEPING_VOID);
+
+        getOrCreateTagBuilder(ItemTags.PLANKS)
+                .add(ModItems.ICE_ETHER_PLANKS);
+        getOrCreateTagBuilder(ItemTags.LOGS)
+                .add(ModItems.ICE_ETHER_LOG)
+                .add(ModItems.STRIPPED_ICE_ETHER_LOG)
+                .add(ModItems.ICE_ETHER_WOOD)
+                .add(ModItems.STRIPPED_ICE_ETHER_WOOD);
+        getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
+                .add(ModItems.ICE_ETHER_LOG)
+                .add(ModItems.ICE_ETHER_WOOD)
+                .add(ModItems.STRIPPED_ICE_ETHER_LOG)
+                .add(ModItems.STRIPPED_ICE_ETHER_WOOD);
+
     }
 }

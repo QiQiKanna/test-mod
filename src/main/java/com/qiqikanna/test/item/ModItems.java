@@ -3,6 +3,7 @@ package com.qiqikanna.test.item;
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.block.ModBlocks;
 import com.qiqikanna.test.entity.ModEntityTypes;
+import com.qiqikanna.test.fluid.ModFluids;
 import com.qiqikanna.test.item.custom.*;
 import com.qiqikanna.test.sound.ModSoundEvents;
 import net.minecraft.block.Block;
@@ -58,6 +59,9 @@ public class ModItems
     public static final Item ICE_ETHER_HORSE_ARMOR = register("ice_ether_horse_armor",
             new MyHorseArmorItem(11,"ice_ether",new Item.Settings().maxCount(1)));
 
+    public static final Item OIL_BUCKET = register("oil_bucket",
+            new BucketItem(ModFluids.OIL,new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
     public static final Item MUSIC_DISC_BLIZZARD = register("music_disc_blizzard",
             new MusicDiscItem(1, ModSoundEvents.MUSIC_DISC_BLIZZARD,
                     new Item.Settings().maxCount(1).rarity(Rarity.RARE),354));
@@ -67,6 +71,18 @@ public class ModItems
     public static final Item MUSIC_DISC_SEEPING_VOID = register("music_disc_seeping_void",
             new MusicDiscItem(1,ModSoundEvents.MUSIC_DISC_SEEPING_VOID,
                     new Item.Settings().maxCount(1).rarity(Rarity.RARE),537));
+
+    public static final Item CUBE_ENTITY_SPAWN_EGG = register("cube_entity_spawn_egg",
+            new SpawnEggItem(ModEntityTypes.CUBE_ENTITY,1,20,new Item.Settings()));
+
+    public static final Item ICE_ETHER_SIGN = register("ice_ether_sign",
+            new SignItem(new Item.Settings().maxCount(16),
+                    ModBlocks.ICE_ETHER_SIGN,
+                    ModBlocks.ICE_ETHER_WALL_SIGN));
+    public static final Item ICE_ETHER_HANGING_SIGN = register("ice_ether_hanging_sign",
+            new HangingSignItem(ModBlocks.ICE_ETHERE_HANGING_SIGN,
+                    ModBlocks.ICE_ETHER_WALL_HANGING_SIGN,
+                    new Item.Settings().maxCount(16)));
 
     public static final Item BASKETBALL_BLOCK = register(ModBlocks.BASKETBALL_BLOCK);
     public static final Item RAINBOW_BLOCK = register(ModBlocks.RAINBOW_BLOCK);
@@ -80,6 +96,7 @@ public class ModItems
     public static final Item MY_BED = register(ModBlocks.MY_BAD);
     public static final Item MY_PILLAR = register(ModBlocks.MY_PILLAR);
     public static final Item MY_FENCE = register(ModBlocks.MY_FENCE);
+    public static final Item SIMPLE_CABINET = register(ModBlocks.SIMPLE_CABINET);
 
     public static final Item ICE_ETHER_STAIRS = register(ModBlocks.ICE_ETHER_STAIRS);
     public static final Item ICE_ETHER_SLAB = register(ModBlocks.ICE_ETHER_SLAB);
@@ -92,9 +109,12 @@ public class ModItems
     public static final Item ICE_ETHER_TRAPDOOR = register(ModBlocks.ICE_ETHER_TRAPDOOR);
     public static final Item HEMOSTONE = register(ModBlocks.HEMOSTONE);
     public static final Item HEMOSTONE_STAIRS = register(ModBlocks.HEMOSTONE_STAIRS);
-
-    public static final Item CUBE_ENTITY_SPAWN_EGG = register("cube_entity_spawn_egg",
-            new SpawnEggItem(ModEntityTypes.CUBE_ENTITY,1,20,new Item.Settings()));
+    public static final Item ICE_ETHER_LOG = register(ModBlocks.ICE_ETHER_LOG);
+    public static final Item ICE_ETHER_WOOD = register(ModBlocks.ICE_ETHER_WOOD);
+    public static final Item STRIPPED_ICE_ETHER_LOG = register(ModBlocks.STRIPPED_ICE_ETHER_LOG);
+    public static final Item STRIPPED_ICE_ETHER_WOOD = register(ModBlocks.STRIPPED_ICE_ETHER_WOOD);
+    public static final Item ICE_ETHER_LEAVES = register(ModBlocks.ICE_ETHER_LEAVES);
+    public static final Item ICE_ETHER_PLANKS = register(ModBlocks.ICE_ETHER_PLANKS);
 
 
 

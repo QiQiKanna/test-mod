@@ -35,6 +35,8 @@ public class ModModelProvider extends FabricModelProvider
         //blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ICE_ETHER_BLOCK); //这个在方块家族内了，不需要重复写
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAINBOW_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BASKETBALL_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ICE_ETHER_LEAVES);
+
         blockStateModelGenerator.registerAxisRotated(ModBlocks.HEMOSTONE, TexturedModel.CUBE_COLUMN);
 
         blockStateModelGenerator.registerCrop(ModBlocks.STRAWBERRY_CROP, StrawberryCropBlock.AGE,0,1,2,3,4,5);
@@ -74,22 +76,34 @@ public class ModModelProvider extends FabricModelProvider
             ));
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.HEMOSTONE_STAIRS,hemostone_stairsModelId);
 
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.MY_PILLAR,ModelIds.getBlockModelId(ModBlocks.MY_PILLAR));
+
         blockStateModelGenerator.registerSimpleState(ModBlocks.CHANDELIER);
         blockStateModelGenerator.registerSimpleState(ModBlocks.TEST_BLOCK);
         blockStateModelGenerator.registerSimpleState(ModBlocks.ORANGE_NIGHTSTAND);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.SIMPLE_CABINET);
+
+        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_ICE_ETHER_LOG,ModBlocks.ICE_ETHERE_HANGING_SIGN,ModBlocks.ICE_ETHER_WALL_HANGING_SIGN);
 
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.ORANGE_CLOCK);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.MY_BAD);
         registerSofaBlockState(blockStateModelGenerator);
         registerNorthDefaultRotationState(ModBlocks.LAMP_BLOCK, blockStateModelGenerator);
 
-        blockStateModelGenerator.registerParentedItemModel(ModBlocks.MY_PILLAR,ModelIds.getBlockModelId(ModBlocks.MY_PILLAR));
+
 
         blockStateModelGenerator.blockStateCollector.accept(
                 createFenceBlockState(ModBlocks.MY_FENCE,
                         new Identifier(TestMod.MOD_ID,"block/my_fence_post"),
                         new Identifier(TestMod.MOD_ID,"block/my_fence_side"))
         );
+
+        blockStateModelGenerator.registerLog(ModBlocks.ICE_ETHER_LOG)
+                .log(ModBlocks.ICE_ETHER_LOG)
+                .wood(ModBlocks.ICE_ETHER_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ICE_ETHER_LOG)
+                .log(ModBlocks.STRIPPED_ICE_ETHER_LOG)
+                .wood(ModBlocks.STRIPPED_ICE_ETHER_WOOD);
 
         ModBlockFamilies.getFamilies()
                 .filter(BlockFamily::shouldGenerateModels)
@@ -116,6 +130,8 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.PICKAXE_AXE,Models.HANDHELD);
         itemModelGenerator.register(ModItems.ICE_ETHER_HORSE_ARMOR,Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.OIL_BUCKET,Models.GENERATED);
+
         //盔甲的方法不太一样
         itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_HELMET);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_CHESTPLATE);
@@ -127,7 +143,6 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.MUSIC_DISC_SEEPING_VOID,Models.TEMPLATE_MUSIC_DISC);
 
         registerSpawnEgg(ModItems.CUBE_ENTITY_SPAWN_EGG,itemModelGenerator);
-
     }
 
     public void registerSpawnEgg(Item item,ItemModelGenerator itemModelGenerator)

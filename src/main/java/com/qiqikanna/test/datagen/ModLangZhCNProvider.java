@@ -51,6 +51,12 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
         translationBuilder.add(ModItems.MUSIC_DISC_SEEPING_VOID,"音乐唱片");
         translationBuilder.add(ModItems.MUSIC_DISC_SEEPING_VOID.getTranslationKey() + ".desc","Seeping Void - Rupter");
 
+        translationBuilder.add(ModBlocks.ICE_ETHER_LOG,"冰以太原木");
+        translationBuilder.add(ModBlocks.ICE_ETHER_WOOD,"冰以太木");
+        translationBuilder.add(ModBlocks.STRIPPED_ICE_ETHER_LOG,"去皮冰以太原木");
+        translationBuilder.add(ModBlocks.STRIPPED_ICE_ETHER_WOOD,"去皮冰以太木");
+        translationBuilder.add(ModBlocks.ICE_ETHER_LEAVES,"冰以太树叶");
+        translationBuilder.add(ModBlocks.ICE_ETHER_PLANKS,"冰以太木板");
         translationBuilder.add(ModBlocks.BASKETBALL_BLOCK,"篮球");
         translationBuilder.add(ModBlocks.RAINBOW_BLOCK,"彩虹块");
         translationBuilder.add(ModBlocks.ICE_ETHER_BLOCK,"冰以太块");
@@ -63,6 +69,7 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
         translationBuilder.add(ModBlocks.MY_BAD,"My Bed");
         translationBuilder.add(ModBlocks.MY_PILLAR,"My Pillar");
         translationBuilder.add(ModBlocks.MY_FENCE,"My Fence");
+        translationBuilder.add(ModBlocks.SIMPLE_CABINET,"Simple Cabinet");
         translationBuilder.add(ModBlocks.ICE_ETHER_STAIRS,"冰以太楼梯");
         translationBuilder.add(ModBlocks.ICE_ETHER_SLAB,"冰以太台阶");
         translationBuilder.add(ModBlocks.ICE_ETHER_BUTTON,"冰以太按钮");
@@ -82,18 +89,23 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
 
         translationBuilder.add(ModBlocks.LUMEN_BERRY_BUSH,"流明浆果丛");
 
+        translationBuilder.add(ModBlocks.ICE_ETHER_SIGN,"Ice Ether Sign");
+        translationBuilder.add(ModBlocks.ICE_ETHERE_HANGING_SIGN,"Ice Ether Hanging Sign");
+
+        translationBuilder.add(ModItems.OIL_BUCKET,"Oil Bucket");
+        translationBuilder.add(ModBlocks.OIL,"Oil");
+
         translationBuilder.add(ModItemGroups.TESTMOD_GROUP,"测试模组");
         translationBuilder.add(ModItemGroups.TESTMOD_BLOCK,"测试模组方块");
 
         translationBuilder.add(ModEntityTypes.CUBE_ENTITY,"Cube Entity");
 
         //声音事件subtitle
-        translationBuilder.add("sounds.test-mod.item_pickaxe_axe_use","Pickaxe Axe: Use on Block");
-        translationBuilder.add("sounds.test-mod.block_ice_ether_break","Ice Ether Block: Break");
-        translationBuilder.add("sounds.test-mod.block_ice_ether_place","Ice Ether Block: Place");
-        translationBuilder.add("sounds.test-mod.block_ice_ether_step","Step on the Ice Ether Block");
         translationBuilder.add("sounds.test-mod.block_ice_ether_fall","Fall on the Ice Ether Block");
-        translationBuilder.add("sounds.test-mod.block_ice_ether_hit","Hit Ice Ether Block");
+
+        translationBuilder.add("entity.minecraft.villager.ice_ether_master","Ice Ether Master");
+
+        translationBuilder.add("container.test-mod.simple_cabinet","Simple Cabinet");
 
         translationBuilder.add("tooltip.test-mod.pickaxe_axe.shift","它既可以作为斧头又可以作为镐子");
         translationBuilder.add("tooltip.test-mod.press_shift","按下§6Shift§r显示详细信息");

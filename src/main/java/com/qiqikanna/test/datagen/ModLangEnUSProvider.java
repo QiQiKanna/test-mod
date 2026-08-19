@@ -59,6 +59,12 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add(ModBlocks.BASKETBALL_BLOCK,"Basketball");
         translationBuilder.add(ModBlocks.RAINBOW_BLOCK,"Rainbow Block");
         translationBuilder.add(ModBlocks.ICE_ETHER_BLOCK,"Ice Ether Block");
+        translationBuilder.add(ModBlocks.ICE_ETHER_LOG,"Ice Ether Log");
+        translationBuilder.add(ModBlocks.ICE_ETHER_WOOD,"Ice Ether Wood");
+        translationBuilder.add(ModBlocks.STRIPPED_ICE_ETHER_LOG,"Stripped Ice Ether Log");
+        translationBuilder.add(ModBlocks.STRIPPED_ICE_ETHER_WOOD,"Stripped Ice Ether Wood");
+        translationBuilder.add(ModBlocks.ICE_ETHER_LEAVES,"Ice Ether Leaves");
+        translationBuilder.add(ModBlocks.ICE_ETHER_PLANKS,"Ice Ether Planks");
         translationBuilder.add(ModBlocks.TEST_BLOCK,"Test Block");
         translationBuilder.add(ModBlocks.CHANDELIER,"Chandelier");
         translationBuilder.add(ModBlocks.ORANGE_NIGHTSTAND,"Orange Nightstand");
@@ -68,6 +74,7 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add(ModBlocks.MY_BAD,"My Bed");
         translationBuilder.add(ModBlocks.MY_PILLAR,"My Pillar");
         translationBuilder.add(ModBlocks.MY_FENCE,"My Fence");
+        translationBuilder.add(ModBlocks.SIMPLE_CABINET,"Simple Cabinet");
         translationBuilder.add(ModBlocks.ICE_ETHER_STAIRS,"Ice Ether Stairs");
         translationBuilder.add(ModBlocks.ICE_ETHER_SLAB,"Ice Ether Slab");
         translationBuilder.add(ModBlocks.ICE_ETHER_BUTTON,"Ice Ether Button");
@@ -80,9 +87,15 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add(ModBlocks.HEMOSTONE,"Hemostone");
         translationBuilder.add(ModBlocks.HEMOSTONE_STAIRS,"Hemostone Stairs");
 
+        translationBuilder.add(ModBlocks.ICE_ETHER_SIGN,"Ice Ether Sign");
+        translationBuilder.add(ModBlocks.ICE_ETHERE_HANGING_SIGN,"Ice Ether Hanging Sign");
+
         translationBuilder.add(ModBlocks.LUMEN_BERRY_BUSH,"Lumen Berry Bush");
 
         translationBuilder.add(ModItems.CUBE_ENTITY_SPAWN_EGG,"Cube Entity Spawn Egg");
+
+        translationBuilder.add(ModItems.OIL_BUCKET,"Oil Bucket");
+        translationBuilder.add(ModBlocks.OIL,"Oil");
 
         translationBuilder.add(ModItemGroups.TESTMOD_GROUP,"test mod");
         translationBuilder.add(ModItemGroups.TESTMOD_BLOCK,"test mod block");
@@ -93,6 +106,8 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add("sounds.test-mod.block_ice_ether_fall","Fall on the Ice Ether Block");
 
         translationBuilder.add("entity.minecraft.villager.ice_ether_master","Ice Ether Master");
+
+        translationBuilder.add("container.test-mod.simple_cabinet","Simple Cabinet");
 
         translationBuilder.add("tooltip.test-mod.pickaxe_axe.shift","It can serve both as an axe and as a pickaxe");
         translationBuilder.add("tooltip.test-mod.press_shift","Hold §6Shift§r for more info");

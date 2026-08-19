@@ -2,7 +2,13 @@ package com.qiqikanna.test.block;
 
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.block.custom.*;
+import com.qiqikanna.test.block.entity.ModBlockEntityTypes;
+import com.qiqikanna.test.fluid.ModFluids;
 import com.qiqikanna.test.sound.ModBlockSoundGroup;
+import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.registry.Registries;
@@ -23,7 +29,7 @@ public class ModBlocks
     public static final Block RAINBOW_BLOCK = register(
             "rainbow_block",
             new Block(AbstractBlock.Settings.create()
-                    .strength(0.1f,1.0f)
+                    .strength(0.1F,1.0F)
                     .sounds(BlockSoundGroup.AMETHYST_BLOCK)
                     .requiresTool()
             ));
@@ -35,7 +41,7 @@ public class ModBlocks
                     .solidBlock(Blocks::never)  //原来这个才是控制是否传递红石信号的
             ));
     public static final Block CHANDELIER = register("chandelier",
-            new GlassBlock(AbstractBlock.Settings.create()  //不知道为啥只有用特殊的子类才能让他透光
+            new GlassBlock(AbstractBlock.Settings.create()  //不知道为啥只有用特殊的子类才能让他透光//用不完整的outlineshape也行
                     .nonOpaque()
                     .luminance(state ->15)));
     public static final Block ORANGE_CLOCK = register("orange_clock",new OrangeClock(AbstractBlock.Settings.copy(Blocks.STONE)));
@@ -50,6 +56,8 @@ public class ModBlocks
             new ModBedBlock(DyeColor.BLACK,AbstractBlock.Settings.create().nonOpaque()));
     public static final Block MY_PILLAR = register("my_pillar",new ModPillarBlock(AbstractBlock.Settings.create().nonOpaque()));
     public static final Block MY_FENCE = register("my_fence",new ModFenceBlock(AbstractBlock.Settings.create().nonOpaque()));
+    public static final Block SIMPLE_CABINET = register("simple_cabinet",
+            new SimpleCabinetBlock(AbstractBlock.Settings.create().nonOpaque(),() -> ModBlockEntityTypes.SIMPLE_CABINET));
 
     public static final Block ICE_ETHER_STAIRS = register("ice_ether_stairs",
             new StairsBlock(ICE_ETHER_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(ICE_ETHER_BLOCK)));
@@ -69,6 +77,18 @@ public class ModBlocks
     public static final Block HEMOSTONE = register("hemostone",new PillarBlock(AbstractBlock.Settings.copy(Blocks.STONE)));
     public static final Block HEMOSTONE_STAIRS = register("hemostone_stairs",
             new StairsBlock(HEMOSTONE.getDefaultState(),AbstractBlock.Settings.copy(HEMOSTONE)));
+    public static final Block ICE_ETHER_LOG = register("ice_ether_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
+    public static final Block ICE_ETHER_WOOD = register("ice_ether_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_ICE_ETHER_LOG = register("stripped_ice_ether_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_ICE_ETHER_WOOD = register("stripped_ice_ether_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final Block ICE_ETHER_LEAVES = register("ice_ether_leaves",
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+    public static final Block ICE_ETHER_PLANKS = register("ice_ether_planks",
+            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
 
     public static final Block STRAWBERRY_CROP = register("strawberry_crop",
             new StrawberryCropBlock(AbstractBlock.Settings.create()
@@ -86,6 +106,30 @@ public class ModBlocks
             ));
     public static final Block LUMEN_BERRY_BUSH = register("lumen_berry_bush",
             new LumenBerryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)));
+
+    public static final Block OIL = register("oil",new FluidBlock(ModFluids.OIL,AbstractBlock.Settings.copy(Blocks.WATER)));
+
+    private static final Identifier ICE_ETHER_SIGN_TEXTURE = new Identifier(TestMod.MOD_ID,"entity/signs/ice_ether");
+    private static final Identifier ICE_ETHER_HANGING_SIGN_TEXTURE = new Identifier(TestMod.MOD_ID,"entity/signs/hanging/ice_ether");
+    private static final Identifier ICE_ETHER_HANGING_SIGN_GUI = new Identifier(TestMod.MOD_ID,"textures/gui/hanging_signs/ice_ether");
+    public static final Block ICE_ETHER_SIGN = register("ice_ether_sign",
+            new TerraformSignBlock(
+                    ICE_ETHER_SIGN_TEXTURE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
+    public static final Block ICE_ETHER_WALL_SIGN = register("ice_ether_wall_sign",
+            new TerraformWallSignBlock(
+                    ICE_ETHER_SIGN_TEXTURE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
+    public static final Block ICE_ETHERE_HANGING_SIGN = register("ice_ether_hanging_sign",
+            new TerraformHangingSignBlock(
+                    ICE_ETHER_HANGING_SIGN_TEXTURE,
+                    ICE_ETHER_HANGING_SIGN_GUI,
+                    AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
+    public static final Block ICE_ETHER_WALL_HANGING_SIGN = register("ice_ether_wall_hanging_sign",
+            new TerraformWallHangingSignBlock(
+                    ICE_ETHER_HANGING_SIGN_TEXTURE,
+                    ICE_ETHER_HANGING_SIGN_GUI,
+                    AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
 
     //block 的注册方法
     public static Block register(String id, Block block)

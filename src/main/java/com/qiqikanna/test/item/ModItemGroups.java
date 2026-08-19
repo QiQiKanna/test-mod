@@ -59,6 +59,8 @@ public class ModItemGroups
                             entries.add(ModItems.MUSIC_DISC_HEMOPHILIA);
                             entries.add(ModItems.MUSIC_DISC_SEEPING_VOID);
 
+                            entries.add(ModItems.OIL_BUCKET);
+
                             entries.add(ModItems.CUBE_ENTITY_SPAWN_EGG);
                         })
                         .build()
@@ -83,6 +85,7 @@ public class ModItemGroups
                             entries.add(ModItems.MY_BED);
                             entries.add(ModItems.MY_PILLAR);
                             entries.add(ModItems.MY_FENCE);
+                            entries.add(ModItems.SIMPLE_CABINET);
 
                             entries.add(ModItems.ICE_ETHER_STAIRS);
                             entries.add(ModItems.ICE_ETHER_SLAB);
@@ -95,6 +98,15 @@ public class ModItemGroups
                             entries.add(ModItems.ICE_ETHER_TRAPDOOR);
                             entries.add(ModItems.HEMOSTONE);
                             entries.add(ModItems.HEMOSTONE_STAIRS);
+                            entries.add(ModItems.ICE_ETHER_LOG);
+                            entries.add(ModItems.ICE_ETHER_WOOD);
+                            entries.add(ModItems.STRIPPED_ICE_ETHER_LOG);
+                            entries.add(ModItems.STRIPPED_ICE_ETHER_WOOD);
+                            entries.add(ModItems.ICE_ETHER_LEAVES);
+                            entries.add(ModItems.ICE_ETHER_PLANKS);
+
+                            entries.add(ModItems.ICE_ETHER_SIGN);
+                            entries.add(ModItems.ICE_ETHER_HANGING_SIGN);
 
                         })
                         .build()

@@ -1,14 +1,17 @@
 package com.qiqikanna.test;
 
 import com.qiqikanna.test.block.ModBlocks;
+import com.qiqikanna.test.block.entity.ModBlockEntityTypes;
 import com.qiqikanna.test.entity.ModEntityTypes;
+import com.qiqikanna.test.fluid.ModFluids;
 import com.qiqikanna.test.item.ModItemGroups;
 import com.qiqikanna.test.item.ModItems;
 import com.qiqikanna.test.sound.ModSoundEvents;
 import com.qiqikanna.test.village.ModTrades;
 import com.qiqikanna.test.village.ModVillagers;
 import net.fabricmc.api.ModInitializer;
-
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,9 +33,22 @@ public class TestMod implements ModInitializer {
 		ModItemGroups.registerGroups();
 		ModBlocks.registerBlocks();
 		ModEntityTypes.register();
+		ModBlockEntityTypes.register();
 		ModSoundEvents.registerSoundEvents();
 		ModTrades.registerTrades();
 		ModVillagers.registerVillagers();
+		ModFluids.register();
+
+		StrippableBlockRegistry.register(ModBlocks.ICE_ETHER_LOG,ModBlocks.STRIPPED_ICE_ETHER_LOG);
+		StrippableBlockRegistry.register(ModBlocks.ICE_ETHER_WOOD,ModBlocks.STRIPPED_ICE_ETHER_WOOD);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ICE_ETHER_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ICE_ETHER_WOOD,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_ICE_ETHER_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_ICE_ETHER_WOOD,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ICE_ETHER_LEAVES,30,60);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ICE_ETHER_PLANKS,5,20);
+
 
 		//fabric api 注册燃料的方法
 		//FuelRegistry.INSTANCE.add(ModItems.URANIUM,32767);
