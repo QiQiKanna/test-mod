@@ -2,6 +2,7 @@ package com.qiqikanna.test;
 
 import com.qiqikanna.test.block.ModBlocks;
 import com.qiqikanna.test.block.entity.ModBlockEntityTypes;
+import com.qiqikanna.test.entity.ModBoatTypes;
 import com.qiqikanna.test.entity.ModEntityTypes;
 import com.qiqikanna.test.fluid.ModFluids;
 import com.qiqikanna.test.item.ModItemGroups;
@@ -31,13 +32,14 @@ public class TestMod implements ModInitializer {
 
 		ModItems.registerItems();
 		ModItemGroups.registerGroups();
-		ModBlocks.registerBlocks();
+		ModBlocks.register();
 		ModEntityTypes.register();
 		ModBlockEntityTypes.register();
 		ModSoundEvents.registerSoundEvents();
 		ModTrades.registerTrades();
 		ModVillagers.registerVillagers();
 		ModFluids.register();
+		ModBoatTypes.register();
 
 		StrippableBlockRegistry.register(ModBlocks.ICE_ETHER_LOG,ModBlocks.STRIPPED_ICE_ETHER_LOG);
 		StrippableBlockRegistry.register(ModBlocks.ICE_ETHER_WOOD,ModBlocks.STRIPPED_ICE_ETHER_WOOD);

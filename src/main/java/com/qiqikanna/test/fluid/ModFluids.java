@@ -1,6 +1,12 @@
 package com.qiqikanna.test.fluid;
 
 import com.qiqikanna.test.TestMod;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
+import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
@@ -26,4 +32,16 @@ public class ModFluids
     }
 
     public static void register(){}
+
+    @Environment(EnvType.CLIENT)
+    public static void registerRenderLayers()
+    {
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),OIL,FLOWING_OIL);
+        FluidRenderHandlerRegistry.INSTANCE.register(OIL,FLOWING_OIL,
+                new SimpleFluidRenderHandler(
+                        new Identifier("minecraft:block/water_still"),
+                        new Identifier("minecraft:block/water_still"),
+                        0x42413B
+                ));
+    }
 }

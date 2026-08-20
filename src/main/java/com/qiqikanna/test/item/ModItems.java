@@ -2,10 +2,12 @@ package com.qiqikanna.test.item;
 
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.block.ModBlocks;
+import com.qiqikanna.test.entity.ModBoatTypes;
 import com.qiqikanna.test.entity.ModEntityTypes;
 import com.qiqikanna.test.fluid.ModFluids;
 import com.qiqikanna.test.item.custom.*;
 import com.qiqikanna.test.sound.ModSoundEvents;
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -83,6 +85,15 @@ public class ModItems
             new HangingSignItem(ModBlocks.ICE_ETHERE_HANGING_SIGN,
                     ModBlocks.ICE_ETHER_WALL_HANGING_SIGN,
                     new Item.Settings().maxCount(16)));
+
+    public static final Item ICE_ETHER_BOAT = TerraformBoatItemHelper.registerBoatItem(
+            ModBoatTypes.ICE_ETHER_BOAT,
+            ModBoatTypes.ICE_ETHER_BOAT_KEY,
+            false);
+    public static final Item ICE_ETHER_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(
+            ModBoatTypes.ICE_ETHER_CHEST_BOAT,
+            ModBoatTypes.ICE_ETHER_BOAT_KEY,
+            true);
 
     public static final Item BASKETBALL_BLOCK = register(ModBlocks.BASKETBALL_BLOCK);
     public static final Item RAINBOW_BLOCK = register(ModBlocks.RAINBOW_BLOCK);

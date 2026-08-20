@@ -91,6 +91,8 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
 
         translationBuilder.add(ModBlocks.ICE_ETHER_SIGN,"Ice Ether Sign");
         translationBuilder.add(ModBlocks.ICE_ETHERE_HANGING_SIGN,"Ice Ether Hanging Sign");
+        translationBuilder.add(ModItems.ICE_ETHER_BOAT,"Ice Ether Boat");
+        translationBuilder.add(ModItems.ICE_ETHER_CHEST_BOAT,"Ice Ether Chest Boat");
 
         translationBuilder.add(ModItems.OIL_BUCKET,"Oil Bucket");
         translationBuilder.add(ModBlocks.OIL,"Oil");

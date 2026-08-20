@@ -142,6 +142,9 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.MUSIC_DISC_HEMOPHILIA,Models.TEMPLATE_MUSIC_DISC);
         itemModelGenerator.register(ModItems.MUSIC_DISC_SEEPING_VOID,Models.TEMPLATE_MUSIC_DISC);
 
+        itemModelGenerator.register(ModItems.ICE_ETHER_BOAT,Models.GENERATED);
+        itemModelGenerator.register(ModItems.ICE_ETHER_CHEST_BOAT,Models.GENERATED);
+
         registerSpawnEgg(ModItems.CUBE_ENTITY_SPAWN_EGG,itemModelGenerator);
     }
 

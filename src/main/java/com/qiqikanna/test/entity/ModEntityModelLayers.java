@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 public class ModEntityModelLayers
 {
     private static final String MAIN = "main";
-    private static final Set<EntityModelLayer> LAYERS = Sets.<EntityModelLayer>newHashSet();
+    private static final Set<EntityModelLayer> LAYERS = Sets.newHashSet();
 
     public static final EntityModelLayer CUBE = registerMain("cube", CubeEntityModel::getTexturedModelData);
     public static final EntityModelLayer DISTORTED_SCOUT = registerMain("distorted_scout", DistortedScoutEntityModel::getTexturedModelData);

@@ -107,6 +107,8 @@ public class ModItemGroups
 
                             entries.add(ModItems.ICE_ETHER_SIGN);
                             entries.add(ModItems.ICE_ETHER_HANGING_SIGN);
+                            entries.add(ModItems.ICE_ETHER_BOAT);
+                            entries.add(ModItems.ICE_ETHER_CHEST_BOAT);
 
                         })
                         .build()

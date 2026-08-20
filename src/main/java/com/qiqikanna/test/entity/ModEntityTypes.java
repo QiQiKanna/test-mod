@@ -3,6 +3,10 @@ package com.qiqikanna.test.entity;
 import com.qiqikanna.test.TestMod;
 import com.qiqikanna.test.entity.custom.*;
 import com.qiqikanna.test.entity.custom.projectile.thrown.TestBlockEntity;
+import com.qiqikanna.test.entity.renderer.*;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.*;
@@ -60,7 +64,16 @@ public class ModEntityTypes
      * 触发类加载，使所有实体类型及属性在静态初始化阶段完成注册。
      * 必须在初始化时调用。
      */
-    public static void register()
+    public static void register(){}
+
+    @Environment(EnvType.CLIENT)
+    public static void registerRenderers()
     {
+        EntityRendererRegistry.register(CUBE_ENTITY, CubeEntityRenderer::new);
+        EntityRendererRegistry.register(DISTORTED_SCOUT, DistortedScoutEntityRenderer::new);
+        EntityRendererRegistry.register(TEST_BLOCK_ENTITY, TestBLockEntityRenderer::new);
+        EntityRendererRegistry.register(DARAKU_CLEAN, DarakuCleanEntityRenderer::new);
+        EntityRendererRegistry.register(AVN_FOX, AvnFoxEntityRenderer::new);
+        EntityRendererRegistry.register(SEATS,SeatEntityRenderer::new);
     }
 }

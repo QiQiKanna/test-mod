@@ -9,8 +9,12 @@ import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -148,8 +152,18 @@ public class ModBlocks
 //        return Registry.register(Registries.BLOCK,new Identifier(TestMod.MOD_ID,id),block);
 //    }
 
-    public static void registerBlocks()
-    {
+    public static void register() {}
 
+    @Environment(EnvType.CLIENT)
+    public static void registerRenderLayers()
+    {
+        //让方块材质正常透明，不写就变黑色了//草了，为毛不生效啊//雾草找到原因了，忘了在fabric.mod.json里写client了
+        BlockRenderLayerMap.INSTANCE.putBlock(ICE_ETHER_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ICE_ETHER_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ICE_ETHER_BLOCK,RenderLayer.getTranslucent());//半透明
+        BlockRenderLayerMap.INSTANCE.putBlock(STRAWBERRY_CROP,RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CORN_CROP,RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(LUMEN_BERRY_BUSH,RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TEST_BLOCK,RenderLayer.getCutout());
     }
 }
