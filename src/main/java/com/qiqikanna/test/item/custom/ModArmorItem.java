@@ -2,6 +2,7 @@ package com.qiqikanna.test.item.custom;
 
 import com.google.common.collect.ImmutableMap;
 import com.qiqikanna.test.item.ModArmorMaterials;
+import com.qiqikanna.test.util.ArmorSetUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -21,8 +22,8 @@ public class ModArmorItem extends ArmorItem
     public static final Map<ArmorMaterial, List<StatusEffectInstance>> MAP = new ImmutableMap.Builder<ArmorMaterial, List<StatusEffectInstance>>()
             .put(ModArmorMaterials.ICE_ETHER,
                     Arrays.asList(
-                            new StatusEffectInstance(StatusEffects.SPEED, 40, 1, false, false, true),
-                            new StatusEffectInstance(StatusEffects.JUMP_BOOST, 40, 1, false, false, true)
+                            new StatusEffectInstance(StatusEffects.SPEED, 40, 1, false, false, false),
+                            new StatusEffectInstance(StatusEffects.JUMP_BOOST, 40, 1, false, false, false)
                     )
             ).build();
 
@@ -37,7 +38,7 @@ public class ModArmorItem extends ArmorItem
         super.inventoryTick(stack, world, entity, slot, selected);
         if (!world.isClient)
         {
-            if (entity instanceof PlayerEntity player && hasFullSuitableArmor(player))
+            if (entity instanceof PlayerEntity player && ArmorSetUtil.hasFullSetArmor(player))
             {
                 evaluateArmorEffects(player);
             }
@@ -50,7 +51,7 @@ public class ModArmorItem extends ArmorItem
         {
             ArmorMaterial material = entry.getKey();
             List<StatusEffectInstance> effects = entry.getValue();
-            if (hasCorrectMaterialArmorOn(material, player))
+            if (ArmorSetUtil.isSameMaterial(material,player))
             {
                 for (StatusEffectInstance effect : effects)
                 {
@@ -65,32 +66,4 @@ public class ModArmorItem extends ArmorItem
 
     }
 
-    public boolean hasFullSuitableArmor(PlayerEntity player)
-    {
-        ItemStack helmet = player.getInventory().getArmorStack( 3);
-        ItemStack chestplate = player.getInventory().getArmorStack(2);
-        ItemStack leggings = player.getInventory().getArmorStack(1);
-        ItemStack boots = player.getInventory().getArmorStack(0);
-        return !helmet.isEmpty() && !chestplate.isEmpty() && !leggings.isEmpty() && !boots.isEmpty();
-    }
-
-    public boolean hasCorrectMaterialArmorOn(ArmorMaterial material, PlayerEntity player)
-    {
-        for (ItemStack stack : player.getInventory().armor)
-        {
-            if (!(stack.getItem() instanceof ArmorItem))
-            {
-                return false;
-            }
-        }
-
-        ArmorItem helmet = (ArmorItem) player.getInventory().getArmorStack(3).getItem();
-        ArmorItem chestplate = (ArmorItem) player.getInventory().getArmorStack(2).getItem();
-        ArmorItem leggings = (ArmorItem) player.getInventory().getArmorStack(1).getItem();
-        ArmorItem boots = (ArmorItem) player.getInventory().getArmorStack(0).getItem();
-        return helmet.getMaterial() == material
-                && chestplate.getMaterial() == material
-                && leggings.getMaterial() == material
-                && boots.getMaterial() == material;
-    }
 }

@@ -1,8 +1,12 @@
 package com.qiqikanna.test;
 
 import com.qiqikanna.test.datagen.*;
+import com.qiqikanna.test.word.ModConfiguredFeatures;
+import com.qiqikanna.test.word.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.registry.RegistryBuilder;
+import net.minecraft.registry.RegistryKeys;
 
 public class TestModDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -17,5 +21,13 @@ public class TestModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipesProvider::new);
 		pack.addProvider(ModPointTagsProvider::new);
+		pack.addProvider(ModWorldProvider::new);
+	}
+
+	@Override
+	public void buildRegistry(RegistryBuilder registryBuilder)
+	{
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
 	}
 }

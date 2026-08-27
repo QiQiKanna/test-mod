@@ -1,6 +1,7 @@
 package com.qiqikanna.test.datagen;
 
 import com.qiqikanna.test.block.ModBlocks;
+import com.qiqikanna.test.client.option.ModKeyBindings;
 import com.qiqikanna.test.entity.ModEntityTypes;
 import com.qiqikanna.test.item.ModItemGroups;
 import com.qiqikanna.test.item.ModItems;
@@ -87,18 +88,23 @@ public class ModLangZhCNProvider extends FabricLanguageProvider
                 translationBuilder
         );
 
-        translationBuilder.add(ModBlocks.LUMEN_BERRY_BUSH,"流明浆果丛");
-
         translationBuilder.add(ModBlocks.ICE_ETHER_SIGN,"Ice Ether Sign");
-        translationBuilder.add(ModBlocks.ICE_ETHERE_HANGING_SIGN,"Ice Ether Hanging Sign");
+        translationBuilder.add(ModBlocks.ICE_ETHER_HANGING_SIGN,"Ice Ether Hanging Sign");
         translationBuilder.add(ModItems.ICE_ETHER_BOAT,"Ice Ether Boat");
         translationBuilder.add(ModItems.ICE_ETHER_CHEST_BOAT,"Ice Ether Chest Boat");
+
+        translationBuilder.add(ModBlocks.LUMEN_BERRY_BUSH,"流明浆果丛");
+        translationBuilder.add(ModBlocks.ICE_ETHER_TREE_SAPLING,"冰以太树苗");
+        translationBuilder.add(ModBlocks.SIMPLE_FLOWER,"Simple Flower");
 
         translationBuilder.add(ModItems.OIL_BUCKET,"Oil Bucket");
         translationBuilder.add(ModBlocks.OIL,"Oil");
 
         translationBuilder.add(ModItemGroups.TESTMOD_GROUP,"测试模组");
         translationBuilder.add(ModItemGroups.TESTMOD_BLOCK,"测试模组方块");
+
+        translationBuilder.add(ModKeyBindings.TEST_MESSAGE.getTranslationKey(), "测试信息");
+        translationBuilder.add(ModKeyBindings.TEST_CATEGORIES, "测试");
 
         translationBuilder.add(ModEntityTypes.CUBE_ENTITY,"Cube Entity");
 

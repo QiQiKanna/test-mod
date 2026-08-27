@@ -30,6 +30,12 @@ public class ModRecipesProvider extends FabricRecipeProvider
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter)
     {
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC,ModItems.URANIUM,1)
+                .input(Items.COAL)
+                .input(ModItems.FIRE_ETHER)
+                .criterion(hasItem(ModItems.FIRE_ETHER),conditionsFromItem(ModItems.FIRE_ETHER))
+                .offerTo(exporter,new Identifier(TestMod.MOD_ID,getItemPath(ModItems.URANIUM)));
+
         offerCompactingRecipe(exporter, RecipeCategory.MISC,
                 ModBlocks.ICE_ETHER_BLOCK,ModItems.ICE_ETHER
         );
@@ -40,7 +46,7 @@ public class ModRecipesProvider extends FabricRecipeProvider
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC,ModItems.SHIT,8)
                 .input(ModItems.BASKETBALL_BLOCK)
                 .criterion(hasItem(ModItems.BASKETBALL_BLOCK),conditionsFromItem(ModItems.BASKETBALL_BLOCK))
-                .offerTo(exporter,new Identifier(TestMod.MOD_ID,"shit"));
+                .offerTo(exporter,new Identifier(TestMod.MOD_ID,getItemPath(ModItems.SHIT)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.BASKETBALL_BLOCK,1)
                 .pattern("###")
@@ -78,7 +84,7 @@ public class ModRecipesProvider extends FabricRecipeProvider
                         category,
                         result
                 )
-                .criterion("has_netherite_ingot", conditionsFromItem(Items.NETHERITE_INGOT))
-                .offerTo(exporter, getItemPath(result) + "_smithing");
+                .criterion(hasItem(input), conditionsFromItem(input))
+                .offerTo(exporter, new Identifier(TestMod.MOD_ID,getItemPath(result) + "_smithing"));
     }
 }

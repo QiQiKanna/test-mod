@@ -95,6 +95,16 @@ public class SofaBlock extends Block
         return false;
     }
 
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit)
+    {
+        if (!world.isClient)
+        {
+            return SeatEntity.create(world,pos,0.25,player,state.get(FACING));
+        }
+        return ActionResult.SUCCESS;
+    }
+
     public enum Type implements StringIdentifiable
     {
         SINGLE("single"),
@@ -114,15 +124,11 @@ public class SofaBlock extends Block
         {
             return this.name;
         }
-    }
 
-    @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit)
-    {
-        if (!world.isClient)
+        @Override
+        public String toString()
         {
-            return SeatEntity.create(world,pos,0.25,player,state.get(FACING));
+            return this.name;
         }
-        return ActionResult.SUCCESS;
     }
 }

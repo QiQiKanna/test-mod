@@ -27,7 +27,7 @@ public class ModItemGroups
                 Registries.ITEM_GROUP,
                 TESTMOD_GROUP,
                 ItemGroup.create(ItemGroup.Row.TOP,7)
-                        .displayName(Text.translatable("itemGroup.test-mod_group"))
+                        .displayName(Text.translatable("itemGroup." + TESTMOD_GROUP.getValue().toTranslationKey()))
                         .icon(() -> new ItemStack(ModItems.SHIT))
                         .entries((displayContext, entries) -> {
                             entries.add(ModItems.ICE_ETHER);
@@ -39,6 +39,7 @@ public class ModItemGroups
                             entries.add(ModItems.STRAWBERRY);
                             entries.add(ModItems.STRAWBERRY_SEEDS);
                             entries.add(ModItems.LUMEN_BERRIES);
+                            entries.add(ModItems.SIMPLE_FLOWER);
 
                             entries.add(ModItems.URANIUM);
                             entries.add(ModItems.FIRE_ETHER);
@@ -70,7 +71,7 @@ public class ModItemGroups
                 Registries.ITEM_GROUP,
                 TESTMOD_BLOCK,
                 ItemGroup.create(null,-1)//fabric api允许用null,-1自动追加到后面
-                        .displayName(Text.translatable("itemGroup.test-mod_block"))
+                        .displayName(Text.translatable("itemGroup." + TESTMOD_BLOCK.getValue().toTranslationKey()))
                         .icon(() -> new ItemStack(ModBlocks.RAINBOW_BLOCK))
                         .entries((displayContext, entries) -> {
                             entries.add(ModItems.BASKETBALL_BLOCK);
@@ -109,6 +110,7 @@ public class ModItemGroups
                             entries.add(ModItems.ICE_ETHER_HANGING_SIGN);
                             entries.add(ModItems.ICE_ETHER_BOAT);
                             entries.add(ModItems.ICE_ETHER_CHEST_BOAT);
+                            entries.add(ModItems.ICE_ETHER_TREE_SAPLING);
 
                         })
                         .build()

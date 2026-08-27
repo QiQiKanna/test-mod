@@ -11,18 +11,18 @@ import net.minecraft.world.WorldAccess;
 
 public class ModPillarBlock extends Block
 {
-    public static final EnumProperty<Type> MY_PILLAR_BLOCK_TYPE = EnumProperty.of("my_pillar_block_type",Type.class);
+    public static final EnumProperty<Type> TYPE = EnumProperty.of("type",Type.class);
 
     public ModPillarBlock(Settings settings)
     {
         super(settings);
-        this.setDefaultState(this.getStateManager().getDefaultState().with(MY_PILLAR_BLOCK_TYPE,Type.SINGLE));
+        this.setDefaultState(this.getStateManager().getDefaultState().with(TYPE,Type.SINGLE));
     }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder)
     {
-        builder.add(MY_PILLAR_BLOCK_TYPE);
+        builder.add(TYPE);
     }
 
     @Override
@@ -32,36 +32,42 @@ public class ModPillarBlock extends Block
         boolean botton =world.getBlockState(pos.down()).isOf(this);
         if (top && botton)
         {
-            return state.with(MY_PILLAR_BLOCK_TYPE,Type.MIDDLE);
+            return state.with(TYPE,Type.MIDDLE);
         }
         else if (top)
         {
-            return state.with(MY_PILLAR_BLOCK_TYPE,Type.BOTTOM);
+            return state.with(TYPE,Type.BOTTOM);
         }
         else if (botton)
         {
-            return state.with(MY_PILLAR_BLOCK_TYPE,Type.TOP);
+            return state.with(TYPE,Type.TOP);
         }
-        return state.with(MY_PILLAR_BLOCK_TYPE,Type.SINGLE);
+        return state.with(TYPE,Type.SINGLE);
     }
 
-    ;public enum Type implements StringIdentifiable
+    public enum Type implements StringIdentifiable
     {
         SINGLE("single"),
         TOP("top"),
         MIDDLE("middle"),
         BOTTOM("bottom");
 
-        private final String id;
-         Type(String id)
+        private final String name;
+         Type(String name)
         {
-            this.id = id;
+            this.name = name;
         }
 
         @Override
         public String asString()
         {
-            return this.id;
+            return this.name;
+        }
+
+        @Override
+        public String toString()
+        {
+            return this.name;
         }
     }
 }

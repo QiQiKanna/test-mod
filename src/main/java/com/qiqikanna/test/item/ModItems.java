@@ -30,7 +30,7 @@ public class ModItems
             new AliasedBlockItem(ModBlocks.LUMEN_BERRY_BUSH,new Item.Settings().food(ModFoodComponents.LUMEN_BERRIES)));
     public static final Item BLUEBARRY = register("bluebarry",new Item(new Item.Settings().food(ModFoodComponents.BLUEBERRY)));
     public static final Item URANIUM = register("uranium",new SimpleDescItem(new Item.Settings()));
-    public static final Item FIRE_ETHER = register("fire_ether",new Item(new Item.Settings()));
+    public static final Item FIRE_ETHER = register("fire_ether",new FireEtherItem(new Item.Settings()));
     public static final Item STRAWBERRY = register("strawberry",new Item(new Item.Settings().food(ModFoodComponents.STRAWBERRY)));
     public static final Item STRAWBERRY_SEEDS = register("strawberry_seeds",
             new AliasedBlockItem(ModBlocks.STRAWBERRY_CROP,new Item.Settings()));
@@ -82,7 +82,7 @@ public class ModItems
                     ModBlocks.ICE_ETHER_SIGN,
                     ModBlocks.ICE_ETHER_WALL_SIGN));
     public static final Item ICE_ETHER_HANGING_SIGN = register("ice_ether_hanging_sign",
-            new HangingSignItem(ModBlocks.ICE_ETHERE_HANGING_SIGN,
+            new HangingSignItem(ModBlocks.ICE_ETHER_HANGING_SIGN,
                     ModBlocks.ICE_ETHER_WALL_HANGING_SIGN,
                     new Item.Settings().maxCount(16)));
 
@@ -126,6 +126,8 @@ public class ModItems
     public static final Item STRIPPED_ICE_ETHER_WOOD = register(ModBlocks.STRIPPED_ICE_ETHER_WOOD);
     public static final Item ICE_ETHER_LEAVES = register(ModBlocks.ICE_ETHER_LEAVES);
     public static final Item ICE_ETHER_PLANKS = register(ModBlocks.ICE_ETHER_PLANKS);
+    public static final Item ICE_ETHER_TREE_SAPLING = register(ModBlocks.ICE_ETHER_TREE_SAPLING);
+    public static final Item SIMPLE_FLOWER = register(ModBlocks.SIMPLE_FLOWER);
 
 
 

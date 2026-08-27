@@ -1,6 +1,7 @@
 package com.qiqikanna.test.datagen;
 
 import com.qiqikanna.test.block.ModBlocks;
+import com.qiqikanna.test.client.option.ModKeyBindings;
 import com.qiqikanna.test.entity.ModEntityTypes;
 import com.qiqikanna.test.item.ModItemGroups;
 import com.qiqikanna.test.item.ModItems;
@@ -88,11 +89,13 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
         translationBuilder.add(ModBlocks.HEMOSTONE_STAIRS,"Hemostone Stairs");
 
         translationBuilder.add(ModBlocks.ICE_ETHER_SIGN,"Ice Ether Sign");
-        translationBuilder.add(ModBlocks.ICE_ETHERE_HANGING_SIGN,"Ice Ether Hanging Sign");
+        translationBuilder.add(ModBlocks.ICE_ETHER_HANGING_SIGN,"Ice Ether Hanging Sign");
         translationBuilder.add(ModItems.ICE_ETHER_BOAT,"Ice Ether Boat");
         translationBuilder.add(ModItems.ICE_ETHER_CHEST_BOAT,"Ice Ether Chest Boat");
 
         translationBuilder.add(ModBlocks.LUMEN_BERRY_BUSH,"Lumen Berry Bush");
+        translationBuilder.add(ModBlocks.ICE_ETHER_TREE_SAPLING,"Ice Ether Tree Sapling");
+        translationBuilder.add(ModBlocks.SIMPLE_FLOWER,"Simple Flower");
 
         translationBuilder.add(ModItems.CUBE_ENTITY_SPAWN_EGG,"Cube Entity Spawn Egg");
 
@@ -101,6 +104,9 @@ public class ModLangEnUSProvider extends FabricLanguageProvider
 
         translationBuilder.add(ModItemGroups.TESTMOD_GROUP,"test mod");
         translationBuilder.add(ModItemGroups.TESTMOD_BLOCK,"test mod block");
+
+        translationBuilder.add(ModKeyBindings.TEST_MESSAGE.getTranslationKey(), "Test Message");
+        translationBuilder.add(ModKeyBindings.TEST_CATEGORIES, "Test");
 
         translationBuilder.add(ModEntityTypes.CUBE_ENTITY,"Cube Entity");
 

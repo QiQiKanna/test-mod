@@ -83,7 +83,7 @@ public class ModModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerSimpleState(ModBlocks.ORANGE_NIGHTSTAND);
         blockStateModelGenerator.registerSimpleState(ModBlocks.SIMPLE_CABINET);
 
-        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_ICE_ETHER_LOG,ModBlocks.ICE_ETHERE_HANGING_SIGN,ModBlocks.ICE_ETHER_WALL_HANGING_SIGN);
+        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_ICE_ETHER_LOG,ModBlocks.ICE_ETHER_HANGING_SIGN,ModBlocks.ICE_ETHER_WALL_HANGING_SIGN);
 
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.ORANGE_CLOCK);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.MY_BAD);
@@ -104,6 +104,12 @@ public class ModModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ICE_ETHER_LOG)
                 .log(ModBlocks.STRIPPED_ICE_ETHER_LOG)
                 .wood(ModBlocks.STRIPPED_ICE_ETHER_WOOD);
+
+        blockStateModelGenerator.registerTintableCross(ModBlocks.ICE_ETHER_TREE_SAPLING,BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(
+                ModBlocks.SIMPLE_FLOWER,
+                ModBlocks.POTTED_SIMPLE_FLOWER,
+                BlockStateModelGenerator.TintType.NOT_TINTED);
 
         ModBlockFamilies.getFamilies()
                 .filter(BlockFamily::shouldGenerateModels)

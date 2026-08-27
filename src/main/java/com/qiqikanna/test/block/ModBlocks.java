@@ -5,6 +5,7 @@ import com.qiqikanna.test.block.custom.*;
 import com.qiqikanna.test.block.entity.ModBlockEntityTypes;
 import com.qiqikanna.test.fluid.ModFluids;
 import com.qiqikanna.test.sound.ModBlockSoundGroup;
+import com.qiqikanna.test.word.tree.IceEtherTreeGenerator;
 import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
@@ -12,9 +13,12 @@ import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -110,6 +114,13 @@ public class ModBlocks
             ));
     public static final Block LUMEN_BERRY_BUSH = register("lumen_berry_bush",
             new LumenBerryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)));
+    public static final Block ICE_ETHER_TREE_SAPLING = register("ice_ether_tree_sapling",
+            new SaplingBlock(new IceEtherTreeGenerator(),AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+    public static final Block SIMPLE_FLOWER = register("simple_flower",
+            new FlowerBlock(StatusEffects.NIGHT_VISION,30,
+                    AbstractBlock.Settings.copy(Blocks.DANDELION)));
+    public static final Block POTTED_SIMPLE_FLOWER = register("potted_simple_flower",
+            Blocks.createFlowerPotBlock(SIMPLE_FLOWER));
 
     public static final Block OIL = register("oil",new FluidBlock(ModFluids.OIL,AbstractBlock.Settings.copy(Blocks.WATER)));
 
@@ -124,7 +135,7 @@ public class ModBlocks
             new TerraformWallSignBlock(
                     ICE_ETHER_SIGN_TEXTURE,
                     AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
-    public static final Block ICE_ETHERE_HANGING_SIGN = register("ice_ether_hanging_sign",
+    public static final Block ICE_ETHER_HANGING_SIGN = register("ice_ether_hanging_sign",
             new TerraformHangingSignBlock(
                     ICE_ETHER_HANGING_SIGN_TEXTURE,
                     ICE_ETHER_HANGING_SIGN_GUI,
@@ -152,7 +163,18 @@ public class ModBlocks
 //        return Registry.register(Registries.BLOCK,new Identifier(TestMod.MOD_ID,id),block);
 //    }
 
-    public static void register() {}
+    public static void register()
+    {
+        StrippableBlockRegistry.register(ModBlocks.ICE_ETHER_LOG,ModBlocks.STRIPPED_ICE_ETHER_LOG);
+        StrippableBlockRegistry.register(ModBlocks.ICE_ETHER_WOOD,ModBlocks.STRIPPED_ICE_ETHER_WOOD);
+
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ICE_ETHER_LOG,5,5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ICE_ETHER_WOOD,5,5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_ICE_ETHER_LOG,5,5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_ICE_ETHER_WOOD,5,5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ICE_ETHER_LEAVES,30,60);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ICE_ETHER_PLANKS,5,20);
+    }
 
     @Environment(EnvType.CLIENT)
     public static void registerRenderLayers()
@@ -165,5 +187,8 @@ public class ModBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CORN_CROP,RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(LUMEN_BERRY_BUSH,RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TEST_BLOCK,RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ICE_ETHER_TREE_SAPLING,RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(SIMPLE_FLOWER,RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(POTTED_SIMPLE_FLOWER,RenderLayer.getCutout());
     }
 }
